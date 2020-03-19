@@ -22,8 +22,7 @@ db.friends.toArray().then(function(data) {
 
 function createFrame(){
 jsPanel.create({
-    theme:       'filledlight',
-    borderRadius: '1.0rem',
+    theme:       'filleddark',
     headerTitle: 'my panel #1',
     position:    'center-top 0 58',
     contentSize: '450 250',
