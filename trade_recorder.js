@@ -1,3 +1,6 @@
+function startMain({
+    
+})
 const jsFrame = new JSFrame();
 //Create window
 const frame01 = jsFrame
