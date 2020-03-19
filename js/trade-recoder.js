@@ -1,6 +1,6 @@
 function startMain(){
     
-alert(Dexie.exists("MyDatabase"));
+//alert(Dexie.exists("MyDatabase"));
 
 createFrame();
 
