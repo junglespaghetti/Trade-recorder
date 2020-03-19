@@ -2,7 +2,9 @@ function startMain(){
     
 alert(Dexie.exists("MyDatabase"));
 
-var db = Dexie("MyDatabase");
+createFrame();
+
+//var db = Dexie("MyDatabase");
 
 //alert(db);
 /*
@@ -19,22 +21,19 @@ db.friends.toArray().then(function(data) {
 }
 
 function createFrame(){
-const jsFrame = new JSFrame();
-//Create window
-const frame01 = jsFrame
-  .create({
-    title: "Yosemite style",
-    left: 20,
-    top: 20,
-    width: 320,
-    height: 220,
-    appearanceName: "yosemite", //Now preset is selectable from  'yosemite','redstone','popup'
-    style: {
-      backgroundColor: "rgba(255,255,255,0.9)"
+jsPanel.create({
+    theme:       'primary',
+    headerTitle: 'my panel #1',
+    position:    'center-top 0 58',
+    contentSize: '450 250',
+    content:     '<p>Example panel ...</p>',
+    callback: function () {
+        this.content.style.padding = '20px';
     },
-    html: '<div id="jsframe-html-top"></div>'
-  })
-  .show();
+    onbeforeclose: function () {
+        return confirm('Do you really want to close the panel?');
+    }
+});
 }
 function createIdexedDB(){
 var db = new Dexie("MyDatabase");
