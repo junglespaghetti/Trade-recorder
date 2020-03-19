@@ -1,4 +1,5 @@
 function startMain(){
+    
 var db = new Dexie("MyDatabase");
 
 db.friends.add({ name: "test", age: "test note" });
