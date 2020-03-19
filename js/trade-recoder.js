@@ -21,23 +21,21 @@ db.friends.toArray().then(function(data) {
 }
 
 function createFrame(){
-    jsPanel.create({
-        content: '<p id="two">Right click this paragraph ...</p>'+
-                 '<p>Left click the header logo (hamburger icon) to create another menu.</p>',
-        position: 'center 150 100',
-        theme: 'filledlight',
-        headerLogo: '<span id="three" class="fa fa-bars" style="margin-left:8px;cursor:pointer;"></span>',
-        callback: function(panel) {
-            jsPanel.contextmenu.create({
-                target: panel.headerlogo,
-                contentSize: 'auto auto',
-                content: "<a>aaaaaaa</a>",
-                callback: function () {
-                    this.content.style.padding = '0';
-                }
-            }, 'click');
-        }
-    })
+ jsPanel.create({
+  headerToolbar: '<span id="bus"><i class="fad fa-bus fa-fw"></i></span>'+
+                 '<span id="train"><i class="fad fa-train fa-fw"></i></span>'+
+                 '<span id="car"><i class="fad fa-car fa-fw"></i></span>'+
+                 '<span id="bicycle"><i class="fad fa-bicycle fa-fw"></i></span>',
+  callback: function (panel) {
+    this.headertoolbar.querySelectorAll('span').forEach(function(item) {
+      item.style.cursor = 'pointer';
+      item.style.marginRight = '4px';
+      item.addEventListener('click', function() {
+        panel.content.innerHTML = 'You clicked the ' + item.id + ' icon!';
+      });
+    });
+  }
+});
 }
 function createIdexedDB(){
 var db = new Dexie("MyDatabase");
