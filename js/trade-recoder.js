@@ -29,7 +29,7 @@ jsPanel.create({
     content:     '<p>Example panel ...</p>',
     callback: function () {
        jsPanel.setStyles(this.content, {
-           borderRadius: '.33rem'
+           borderRadius: '.8rem'
         });
     },
     onbeforeclose: function () {
