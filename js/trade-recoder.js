@@ -22,7 +22,13 @@ db.friends.toArray().then(function(data) {
 
 function createFrame(){
 jsPanel.create({
-    theme:       'primary filledlight',
+    theme:       {
+        bgPanel: 'white',
+        bgContent: 'white',
+        colorHeader: 'rebeccapurple',
+        colorContent: '#333',
+        border: '2px solid rebeccapurple'
+    },
     headerTitle: 'my panel #1',
     position:    'center-top 0 58',
     contentSize: '450 250',
