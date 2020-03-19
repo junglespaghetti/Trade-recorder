@@ -2,6 +2,8 @@ function startMain(){
     
 var db = new Dexie("MyDatabase");
 
+alert(db);
+/*
 db.friends.add({ name: "test", age: "test note" });
 
 var opt = {
@@ -11,6 +13,7 @@ var opt = {
 db.friends.toArray().then(function(data) {
   alert(Papa.unparse(data, opt));
 });
+*/
 }
 
 function createFrame(){
