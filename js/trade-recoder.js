@@ -27,10 +27,9 @@ jsPanel.create({
     position:    'center-top 0 58',
     contentSize: '450 250',
     content:     '<p>Example panel ...</p>',
-    borderRadius: '.33rem',
     callback: function () {
        jsPanel.setStyles(this.content, {
-            borderTopColor: 'transparent',
+           borderRadius: '.33rem'
         });
     },
     onbeforeclose: function () {
