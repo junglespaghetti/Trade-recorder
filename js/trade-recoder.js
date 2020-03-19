@@ -1,10 +1,10 @@
 function startMain(){
     
-alert(Dexie.exists("MyDatabase"))
+alert(Dexie.exists("MyDatabase"));
 
 var db = Dexie("MyDatabase");
 
-alert(db);
+//alert(db);
 /*
 db.friends.add({ name: "test", age: "test note" });
 
