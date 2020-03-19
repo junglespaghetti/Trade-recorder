@@ -31,6 +31,7 @@ function createFrame(){
             jsPanel.contextmenu.create({
                 target: panel.headerlogo,
                 contentSize: 'auto auto',
+                content: "<a>aaaaaaa</a>",
                 callback: function () {
                     this.content.style.padding = '0';
                 }
