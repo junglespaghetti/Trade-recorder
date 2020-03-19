@@ -3,7 +3,7 @@ javascript: (function(f, urls,cssUlrs, i, s,c) {
     "https://cdn.jsdelivr.net/npm/i18n-js@3.5.1/app/assets/javascripts/i18n.min.js",
     "https://cdn.jsdelivr.net/npm/jspanel4@4.9.4/dist/jspanel.js",
     "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/dexie/2.0.4/dexie.min.js"
+    "https://cdnjs.cloudflare.com/ajax/libs/dexie/2.0.4/dexie.min.js",
     "https://junglespaghetti.github.io/trade-recorder/js/trade-recoder.js"
   ];
   cssUlrs = [
@@ -14,7 +14,7 @@ javascript: (function(f, urls,cssUlrs, i, s,c) {
     c = document.createElement("link");
     c.type = "text/css";
     c.rel = "stylesheet";
-    c.href = href[i];
+    c.href = cssUlrs[i];
     document.body.appendChild(c);
     }
   for (i = 0; i < urls.length; i++) {
