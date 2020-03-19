@@ -1,6 +1,6 @@
 javascript: (function(f, urls, i, s) {
   urls = [
-    "https://cdn.jsdelivr.net/npm/list-js@0.1.4/list.js",
+    "https://junglespaghetti.github.io/trade-recorder/trade_recoder.js",
     "https://cdn.jsdelivr.net/npm/jsframe.js@1.5.16/lib/jsframe.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/dexie/2.0.4/dexie.min.js"
@@ -16,5 +16,5 @@ javascript: (function(f, urls, i, s) {
     document.body.appendChild(s);
   }
 })(function() {
-  // code
+  startMain();
 });
