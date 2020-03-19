@@ -1,6 +1,6 @@
 function startMain(){
     
-var db = new Dexie("MyDatabase");
+var db = Dexie("MyDatabase");
 
 alert(db);
 /*
