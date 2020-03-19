@@ -1,5 +1,7 @@
 function startMain(){
     
+alert(Dexie.exists("MyDatabase"))
+
 var db = Dexie("MyDatabase");
 
 alert(db);
