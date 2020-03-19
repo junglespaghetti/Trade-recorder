@@ -22,7 +22,7 @@ db.friends.toArray().then(function(data) {
 
 function createFrame(){
  jsPanel.create({
-  headerToolbar: '<span id="bus"><i class="fad fa-bus fa-fw"></i></span>'+
+  headerToolbar: '<span id="bus"><i class="fas fa-sign-in-alt"></i></span>'+
                  '<span id="train"><i class="fad fa-train fa-fw"></i></span>'+
                  '<span id="car"><i class="fad fa-car fa-fw"></i></span>'+
                  '<span id="bicycle"><i class="fad fa-bicycle fa-fw"></i></span>',
