@@ -25,7 +25,7 @@ function createFrame(){
         content: '<p id="two">Right click this paragraph ...</p>'+
                  '<p>Left click the header logo (hamburger icon) to create another menu.</p>',
         position: 'center 150 100',
-        theme: 'danger',
+        theme: 'filledlight',
         headerLogo: '<span id="three" class="fa fa-bars" style="margin-left:8px;cursor:pointer;"></span>',
         callback: function(panel) {
             jsPanel.contextmenu.create({
@@ -36,10 +36,7 @@ function createFrame(){
                 }
             }, 'click');
         }
-    });
-});
-
-});
+    })
 }
 function createIdexedDB(){
 var db = new Dexie("MyDatabase");
