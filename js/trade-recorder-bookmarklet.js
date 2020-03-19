@@ -7,6 +7,7 @@ javascript: (function(f, urls,cssUlrs, i, s,c) {
     "https://junglespaghetti.github.io/trade-recorder/js/trade-recoder.js"
   ];
   cssUlrs = [
+    "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
     "https://cdn.jsdelivr.net/npm/jspanel4@4.9.4/dist/jspanel.css",
     "https://junglespaghetti.github.io/trade-recorder/css/trade-recoder.css"   
   ];
