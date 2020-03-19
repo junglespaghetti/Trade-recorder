@@ -22,22 +22,13 @@ db.friends.toArray().then(function(data) {
 
 function createFrame(){
 jsPanel.create({
-    theme:       {
-        bgPanel: 'white',
-        bgContent: 'white',
-        colorHeader: 'rebeccapurple',
-        colorContent: '#333',
-        border: '2px solid rebeccapurple'
-    },
+    theme:       'filledlight',
     headerTitle: 'my panel #1',
     position:    'center-top 0 58',
     contentSize: '450 250',
     content:     '<p>Example panel ...</p>',
     callback: function () {
-       jsPanel.setStyles(this.content, {
-           borderRadius: '1.0rem'
-        });
-    },
+           },
     onbeforeclose: function () {
         return confirm('Do you really want to close the panel?');
     }
