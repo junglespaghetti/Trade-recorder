@@ -8,7 +8,7 @@ javascript: (function(f, urls,cssUlrs, i, s,c) {
   ];
   cssUlrs = [
     "https://cdn.jsdelivr.net/npm/jspanel4@4.9.4/dist/jspanel.css",
-    "https://junglespaghetti.github.io/trade-recorder/js/trade-recoder.css"   
+    "https://junglespaghetti.github.io/trade-recorder/css/trade-recoder.css"   
   ];
   for (i = 0; i < cssUlrs.length; i++) {
     c = document.createElement("link");
