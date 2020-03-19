@@ -1,6 +1,18 @@
-function startMain({
-    
-})
+function startMain(){
+var db = new Dexie("MyDatabase");
+
+db.friends.add({ name: "test", age: "test note" });
+
+var opt = {
+  delimiter: "<>"
+};
+
+db.friends.toArray().then(function(data) {
+  alert(Papa.unparse(data, opt));
+});
+}
+
+function createFrame(){
 const jsFrame = new JSFrame();
 //Create window
 const frame01 = jsFrame
@@ -17,19 +29,11 @@ const frame01 = jsFrame
     html: '<div id="jsframe-html-top"></div>'
   })
   .show();
+}
+function createIdexedDB(){
 var db = new Dexie("MyDatabase");
 db.version(1).stores({
   friends: "++id, name, age, *tags",
   gameSessions: "id, score"
 });
-//  db.open();
-
-db.friends.add({ name: "test", age: "test note" });
-
-var opt = {
-  delimiter: "<>"
-};
-
-db.friends.toArray().then(function(data) {
-  alert(Papa.unparse(data, opt));
-});
+}
