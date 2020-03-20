@@ -21,9 +21,20 @@ db.friends.toArray().then(function(data) {
 }
 
 function createFrame(){
+var tpl = jsPanel.createPanelTemplate();
+// create container for your extra control ...
+var btn = document.createElement('div');
+// ... and add necessary classnames
+btn.className = 'jsPanel-btn jsPanel-btn-settings';
+// add icon to the container of the new control
+btn.innerHTML = '<span class="fal fa-cog"></span>';
+// prepend new control to controlbar of copied jsPanel HTML template
+var controls = tpl.querySelector('.jsPanel-controlbar');
+controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smallify'));
+
  jsPanel.create({
-  headerToolbar: '<select name="name" id="sampleSelect"><option value="1">Watch list</option></select>' +
-                 '<span id="bus"><i class="fas fa-file-import"></i></i></span>'+
+  template: tpl,
+  headerToolbar: '<span id="bus"><i class="fas fa-file-import"></i></i></span>'+
                  '<span id="train"><i class="fas fa-file-download"></i></span>'+
                  '<span id="car"><i class="fas fa-hand-holding-usd"></i></span>'+
                  '<span id="car"><i class="fas fa-money-check-alt"></i></span>'+
