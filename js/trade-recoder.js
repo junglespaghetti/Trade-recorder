@@ -49,30 +49,20 @@ return
 
 
 function createFrame(){
-var tpl = jsPanel.createPanelTemplate();
-// create container for your extra control ...
-var btn = document.createElement('div');
-// ... and add necessary classnames
-btn.className = 'jsPanel-btn jsPanel-btn-settings';
-// add icon to the container of the new control
-btn.innerHTML = '<span id="colg"><i class="fas fa-cog"></i></span>';
-// prepend new control to controlbar of copied jsPanel HTML template
-var controls = tpl.querySelector('.jsPanel-controlbar');
-controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smallify'));
 
  jsPanel.create({
-     emplate: tpl,
-    headerTitle: 'Trade Recorder',
     position:    'center-top 0 58',
     contentSize: '450 250',
     headerLogo:'<input type="text" name="a" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;"><datalist id="db-list"><option value="this db"></datalist>',
-    headerToolbar: '<input type="text" name="a" list="table-list" placeholder="input Table name" autocomplete="off"><datalist id="table-list"><option value="table"></datalist>' +
+    headerToolbar: '<div style="margin-left:8px;">' +
+                    '<input type="text" name="a" list="table-list" placeholder="input Table name" autocomplete="off"><datalist id="table-list"><option value="table"></datalist>' +
                     '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
                    '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
                     '<span id="car"><i class="fas fa-hand-holding-usd fa-lg"></i></span>'+
                  '<span id="car"><i class="fas fa-money-check-alt fa-lg"></i></span>'+
                  '<span id="car"><i class="fas fa-chart-line fa-lg"></i></span>'+
-                 '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>',
+                 '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
+                 '</div>',
   callback: function (panel) {
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
