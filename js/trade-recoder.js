@@ -16,6 +16,9 @@ createFrame();
 async function getRecorderDB(){
 
 var db = new Dexie(recorderDBName);
+db.version(1).stores({
+    friends: `name, age`
+})
 await db.friends.add({ name: "test", age: "test note" });
 
 var opt = {
