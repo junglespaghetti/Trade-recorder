@@ -23,10 +23,12 @@ db.friends.toArray().then(function(data) {
 function createFrame(){
  jsPanel.create({
   headerToolbar: '<select name="name" id="sampleSelect"><option value="1">Watch list</option></select>' +
-                 '<span id="bus"><i class="fas fa-sign-in-alt"></i></span>'+
-                 '<span id="train"><i class="fad fa-train fa-fw"></i></span>'+
-                 '<span id="car"><i class="fad fa-car fa-fw"></i></span>'+
-                 '<span id="bicycle"><i class="fad fa-bicycle fa-fw"></i></span>',
+                 '<span id="bus"><i class="fas fa-file-import"></i></i></span>'+
+                 '<span id="train"><i class="fas fa-file-download"></i></span>'+
+                 '<span id="car"><i class="fas fa-hand-holding-usd"></i></span>'+
+                 '<span id="car"><i class="fas fa-money-check-alt"></i></span>'+
+                 '<span id="car"><i class="fas fa-chart-line"></i></span>'+
+                 '<span id="bicycle"><i class="fas fa-calculator"></i></span>',
   callback: function (panel) {
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
