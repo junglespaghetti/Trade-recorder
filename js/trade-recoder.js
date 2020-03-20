@@ -14,6 +14,7 @@ createFrame();
 }
 
 function getRecorderDB(){
+    alert("aaa");
 var db = Dexie(recorderDBName);
 
 db.friends.add({ name: "test", age: "test note" });
