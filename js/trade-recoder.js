@@ -65,7 +65,7 @@ controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smal
     headerTitle: 'Trade Recorder',
     position:    'center-top 0 58',
     contentSize: '450 250',
-    headerLogo:'<select name="slect-db-area" id="slect-db-area" style="margin-left:10px;"><option data-group="" value="">select table</option></select>',
+    headerLogo:'<input type="text" name="a" list="kenpo" placeholder="テキスト入力もしくはダブルクリック" autocomplete="off" style="margin-left:10px;"><datalist id="kenpo"><option value="北斗神拳"></datalist>',
     headerToolbar: '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
                    '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
                     '<span id="car"><i class="fas fa-hand-holding-usd fa-lg"></i></span>'+
