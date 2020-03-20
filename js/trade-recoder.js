@@ -66,7 +66,7 @@ controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smal
     position:    'center-top 0 58',
     contentSize: '450 250',
     headerLogo:'<input type="text" name="a" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:10px;"><datalist id="db-list"><option value="this db"></datalist>',
-    headerToolbar: '<input type="text" name="a" list="table-list" placeholder="input DB name" autocomplete="off" style="margin-left:10px;"><datalist id="table-list"><option value="table"></datalist>' +
+    headerToolbar: '<input type="text" name="a" list="table-list" placeholder="input DB name" autocomplete="off"><datalist id="table-list"><option value="table"></datalist>' +
                     '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
                    '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
                     '<span id="car"><i class="fas fa-hand-holding-usd fa-lg"></i></span>'+
