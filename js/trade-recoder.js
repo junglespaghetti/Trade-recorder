@@ -17,8 +17,10 @@ async function getRecorderDB(){
 
 var db = new Dexie(recorderDBName);
 let openRequest = indexedDB.open(recorderDBName, 1)
-var result = await openRequest.result;
-alert(result.version);
+openRequest.onupgradeneeded = function() {
+  let db2 = openRequest.result;
+  alert(db2.version);
+};
 db.version(1).stores({
     friends: `name, age`
 })
