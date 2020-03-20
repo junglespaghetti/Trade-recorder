@@ -27,13 +27,14 @@ var btn = document.createElement('div');
 // ... and add necessary classnames
 btn.className = 'jsPanel-btn jsPanel-btn-settings';
 // add icon to the container of the new control
-btn.innerHTML = '<span id="colg"><i class="fas fa-cogs"></i></span>';
+btn.innerHTML = '<span id="colg"><i class="fas fa-cog"></i></span>';
 // prepend new control to controlbar of copied jsPanel HTML template
 var controls = tpl.querySelector('.jsPanel-controlbar');
 controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smallify'));
 
  jsPanel.create({
   template: tpl,
+  headerLogo:'<select name="area2" id="area2"><option data-group="" value="">未選択</option></select>',
   headerToolbar: '<span id="bus"><i class="fas fa-file-import"></i></i></span>'+
                  '<span id="train"><i class="fas fa-file-download"></i></span>'+
                  '<span id="car"><i class="fas fa-hand-holding-usd"></i></span>'+
