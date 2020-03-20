@@ -34,13 +34,13 @@ controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smal
 
  jsPanel.create({
   template: tpl,
-  headerLogo:'<select name="slect-db-area" id="slect-db-area" style="margin-left:20px;"><option data-group="" value="">select table</option></select>',
-  headerToolbar: '<span id="bus"><i class="fas fa-file-import"></i></i></span>'+
-                 '<span id="train"><i class="fas fa-file-download"></i></span>'+
-                 '<span id="car"><i class="fas fa-hand-holding-usd"></i></span>'+
-                 '<span id="car"><i class="fas fa-money-check-alt"></i></span>'+
-                 '<span id="car"><i class="fas fa-chart-line"></i></span>'+
-                 '<span id="bicycle"><i class="fas fa-calculator"></i></span>',
+  headerLogo:'<select name="slect-db-area" id="slect-db-area" style="margin-left:10px;"><option data-group="" value="">select table</option></select>',
+  headerToolbar: '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
+                 '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
+                 '<span id="car"><i class="fas fa-hand-holding-usd fa-lg"></i></span>'+
+                 '<span id="car"><i class="fas fa-money-check-alt fa-lg"></i></span>'+
+                 '<span id="car"><i class="fas fa-chart-line fa-lg"></i></span>'+
+                 '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>',
   callback: function (panel) {
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
