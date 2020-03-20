@@ -21,11 +21,12 @@ db.friends.add({ name: "test", age: "test note" });
 var opt = {
   delimiter: "<>"
 };
+alert("aaa");
 
 db.friends.toArray().then(function(data) {
   alert(Papa.unparse(data, opt));
 });
-    alert("aaa");
+    
 }
 
 function createIdexedDB(){
