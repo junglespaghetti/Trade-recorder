@@ -16,7 +16,8 @@ createFrame();
 async function getRecorderDB(){
 
 var db = new Dexie(recorderDBName);
-var result = db.result;
+let openRequest = indexedDB.open(recorderDBName, 1)
+var result = openRequest.result;
 alert(result.version);
 db.version(1).stores({
     friends: `name, age`
