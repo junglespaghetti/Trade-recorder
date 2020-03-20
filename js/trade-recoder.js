@@ -1,6 +1,14 @@
+const recorderDBName = "recorderDB"
+
 function startMain(){
     
-Dexie.exists("MyDatabase").then(function(e){alert(e)});
+Dexie.exists(recorderDBName).then(function(exists){
+    if(!exists){
+        createIdexedDB();
+    }else{
+    alert("db");
+    }
+});
 
 createFrame();
 
@@ -19,6 +27,16 @@ db.friends.toArray().then(function(data) {
 });
 */
 }
+function createIdexedDB(){
+var db = new Dexie(recorderDBName);
+db.version(1).stores({
+  friends: "++id, name, age, *tags",
+  gameSessions: "id, score"
+});
+db.open();
+return
+}
+
 
 function createFrame(){
 var tpl = jsPanel.createPanelTemplate();
