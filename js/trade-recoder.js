@@ -16,7 +16,7 @@ createFrame();
 async function getRecorderDB(){
 
 var db = await new Dexie(recorderDBName);
-db.friends.add({ name: "test", age: "test note" });
+await db.friends.add({ name: "test", age: "test note" });
 
 var opt = {
   delimiter: "<>"
