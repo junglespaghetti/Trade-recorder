@@ -3,10 +3,17 @@ const recorderDBName = "recorderDB"
 function startMain(){
     
 Dexie.exists(recorderDBName).then(function(exists){
+    var eDB = new Dexie(recorderDBName);
+        eDB.version(1).stores({
+        dbVersion: "++id, name, version, ",
+        settings: "name, value"
+        }).open();;
     if(!exists){
-        createIdexedDB();
-        alert("not db");
+        eDB.sbVersion.add({name:recorderDBName,version:1});
+        eDB.settings.add({name:"status",value:"new"});
     }
+
+
     getRecorderDB();
 });
 
@@ -51,7 +58,7 @@ return
 function createFrame(){
 
  jsPanel.create({
-    headerTitle: location.hostname,
+    headerTitle: 'host:' + location.hostname,
     position:    'center-top 0 58',
     contentSize: '450 250',
     headerLogo:'<input type="text" name="a" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;"><datalist id="db-list"><option value="this db"></datalist>',
