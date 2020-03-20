@@ -5,6 +5,7 @@ function startMain(){
 Dexie.exists(recorderDBName).then(function(exists){
     if(!exists){
         createIdexedDB();
+        alert("not db");
     }else{
     alert("db");
     }
@@ -73,10 +74,4 @@ controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smal
   }
 });
 }
-function createIdexedDB(){
-var db = new Dexie("MyDatabase");
-db.version(1).stores({
-  friends: "++id, name, age, *tags",
-  gameSessions: "id, score"
-});
-}
+
