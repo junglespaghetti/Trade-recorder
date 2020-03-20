@@ -51,6 +51,7 @@ return
 function createFrame(){
 
  jsPanel.create({
+    headerTitle: location.hostname,
     position:    'center-top 0 58',
     contentSize: '450 250',
     headerLogo:'<input type="text" name="a" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;"><datalist id="db-list"><option value="this db"></datalist>',
