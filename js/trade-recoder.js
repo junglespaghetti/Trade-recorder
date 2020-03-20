@@ -16,7 +16,8 @@ createFrame();
 async function getRecorderDB(){
 
 var db = new Dexie(recorderDBName);
-alert(db.version);
+var result = db.result;
+alert(result.version);
 db.version(1).stores({
     friends: `name, age`
 })
