@@ -13,9 +13,9 @@ Dexie.exists(recorderDBName).then(function(exists){
 createFrame();
 }
 
-function getRecorderDB(){
+async function getRecorderDB(){
 
-var db = new Dexie(recorderDBName);
+var db = await new Dexie(recorderDBName);
 db.friends.add({ name: "test", age: "test note" });
 
 var opt = {
