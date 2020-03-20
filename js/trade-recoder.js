@@ -16,7 +16,6 @@ createFrame();
 function getRecorderDB(){
 
 var db = new Dexie(recorderDBName);
-    alert("aaa");
 db.friends.add({ name: "test", age: "test note" });
 
 var opt = {
@@ -26,6 +25,7 @@ var opt = {
 db.friends.toArray().then(function(data) {
   alert(Papa.unparse(data, opt));
 });
+    alert("aaa");
 }
 
 function createIdexedDB(){
