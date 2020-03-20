@@ -27,7 +27,7 @@ var btn = document.createElement('div');
 // ... and add necessary classnames
 btn.className = 'jsPanel-btn jsPanel-btn-settings';
 // add icon to the container of the new control
-btn.innerHTML = '<span class="fal fa-cog"></span>';
+btn.innerHTML = '<span id="colg"><i class="fas fa-cogs"></i></span>';
 // prepend new control to controlbar of copied jsPanel HTML template
 var controls = tpl.querySelector('.jsPanel-controlbar');
 controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smallify'));
