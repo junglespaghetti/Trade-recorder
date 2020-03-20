@@ -34,7 +34,7 @@ controls.insertBefore(btn, controls.querySelector('.jsPanel-btn.jsPanel-btn-smal
 
  jsPanel.create({
   template: tpl,
-  headerLogo:'  <select name="area2" id="area2"><option data-group="" value="">select table</option></select>',
+  headerLogo:'<pre> </pre><select name="slect-db-area" id="slect-db-area"><option data-group="" value="">select table</option></select>',
   headerToolbar: '<span id="bus"><i class="fas fa-file-import"></i></i></span>'+
                  '<span id="train"><i class="fas fa-file-download"></i></span>'+
                  '<span id="car"><i class="fas fa-hand-holding-usd"></i></span>'+
