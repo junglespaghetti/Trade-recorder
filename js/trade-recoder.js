@@ -6,17 +6,16 @@ Dexie.exists(recorderDBName).then(function(exists){
     if(!exists){
         createIdexedDB();
         alert("not db");
-    }else{
-    alert("db");
     }
+    getRecorderDB();
 });
 
 createFrame();
+}
 
-//var db = Dexie("MyDatabase");
+function getRecorderDB(){
+var db = Dexie("MyDatabase");
 
-//alert(db);
-/*
 db.friends.add({ name: "test", age: "test note" });
 
 var opt = {
@@ -26,8 +25,8 @@ var opt = {
 db.friends.toArray().then(function(data) {
   alert(Papa.unparse(data, opt));
 });
-*/
 }
+
 function createIdexedDB(){
 var db = new Dexie(recorderDBName);
 db.version(1).stores({
