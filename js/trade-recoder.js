@@ -8,12 +8,11 @@ Dexie.exists(easyIndexedDB).then(function(exists){
         eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
-        }).open();;
-    }else{
-        eDB.version(1).open();
-    }
+        }).open();
         eDB.dbList.add({name:easyIndexedDB,version:1,table:["dbList","settings"]});
         eDB.settings.add({name:"status",value:"new"});
+    }else{
+        eDB.version(1).open();
     }
 eDB.dbList.toArray().then(function(data) {
     let dbList = document.getElementById("db-list");
