@@ -46,6 +46,7 @@ function createEasyIndexedDB(){
         dbList: "++id, name, version, table ",
         settings: "name, value"
         });
+        alert("aaa");
         if(!exists){
             eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
             eDB.settings.put({name:"status",value:"new"});
