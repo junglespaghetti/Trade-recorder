@@ -30,14 +30,14 @@ db.friends.toArray().then(function(data) {
 
 function iniEasyIdexedDB(){
     alert("aaa");
-Dexie.exists(easyIndexedDB).then(function(exists){
-    var eDB = new Dexie(easyIndexedDB);
+Dexie.exists("easyIndexedDB").then(function(exists){
+    var eDB = new Dexie("easyIndexedDB");
     if(!exists){
         eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
-        }).open();
-        eDB.dbList.add({name:easyIndexedDB,version:1,table:["dbList","settings"]});
+        });
+        eDB.dbList.add({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
         eDB.settings.add({name:"status",value:"new"});
     }else{
         eDB.version(1).open();
@@ -74,14 +74,14 @@ function createFrame(){
                  '</div>',
   callback: function (panel) {
       
-    var eDB = new Dexie(easyIndexedDB);
+    var eDB = new Dexie("easyIndexedDB");
     
     eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
         });
-    alert(easyIndexedDB);   
-        eDB.dbList.put({name:easyIndexedDB,version:1,table:["dbList","settings"]});
+    alert("easyIndexedDB");   
+        eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
         eDB.settings.put({name:"status",value:"new"});
     
 eDB.dbList.toArray().then(function(data) {
