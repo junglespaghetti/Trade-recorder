@@ -1,12 +1,6 @@
 const easyIndexedDB = "easyIndexedDB"
 
 function startMain(){
-    
-
-
-    getRecorderDB();
-});
-
 createFrame();
 }
 
@@ -55,6 +49,7 @@ eDB.dbList.toArray().then(function(data) {
         option.value = val.name;
         dbList.appendChild(option);
     })
+});
 });
 }
 
