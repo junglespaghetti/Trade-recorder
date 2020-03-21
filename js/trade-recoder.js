@@ -1,13 +1,13 @@
 function startMain(){
     var htmlContents = '<div id="easyIndexedDB-contents">\
-    <dev style="margin:8px;border:2px;pedding:4px;>\
-    <ul id="easyIndexedDB-pages" style="list-style: none;margin-left: 4px;">\
+    <dev>\
+    <ul id="easyIndexedDB-pages" style="list-style:">\
         <li id="easyIndexedDb-edit-form">\
             <h3>Easy IndexedDB</h3>\
-            <p style="line-height:0.5;">DB Name : <input id="easyindexedDB-DB-name"></p>\
-            <p style="line-height:0.5;">Version:</p>\
-            <p style="line-height:0.5;">Origin url:</p>\
-            <p style="line-height:0.5;"><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
+            <p>DB Name : <input id="easyindexedDB-DB-name"></p>\
+            <p>Version:</p>\
+            <p>Origin url:</p>\
+            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
             <ol id="easyIndexedDB-table-list" style="padding-left: 10px;">\
                 <li>\
                     <input style="width:60px;"> : <input><span><i class="fas fa-times"></i></span>\
