@@ -97,9 +97,8 @@ eDB.dbList.toArray().then(function(data) {
     })
 });
 });
-alert("ssss");
 let dataInput = document.getElementById("db-input");
-    dataInput.addEventListener('change',function (event){alert(event.target.value)});
+    dataInput.addEventListener('change',function (event){alert("dddd")});
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
