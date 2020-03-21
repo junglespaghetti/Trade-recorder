@@ -62,7 +62,7 @@ function createFrame(){
     headerTitle: 'host:' + location.hostname,
     position:    'center-top 0 58',
     contentSize: '450 250',
-    headerLogo:'<input type="text" name="a" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;"><datalist id="db-list"><option value="this db"></datalist>',
+    headerLogo:'<input type="text" name="a" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:72pt;"><datalist id="db-list"><option value="this db"></datalist>',
     headerToolbar: '<input type="text" name="a" list="table-list" placeholder="input Table name" autocomplete="off"><datalist id="table-list"><option value="table"></datalist>' +
                     '<div style="margin-left:8px;">' +               
                     '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
