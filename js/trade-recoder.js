@@ -1,18 +1,18 @@
 function startMain(){
-    var htmlContents = '<div id="easyIndexedDB-contents">\
+    var htmlContents = '<div id="easyIndexedDB-contents" style="margin:8px;>\
     <ul id="easyIndexedDB-pages" style="list-style: none;">\
         <li id="easyIndexedDb-edit-form">\
             <h3>Easy IndexedDB</h3>\
-            <p>DB Name : <input id="easyindexedDB-DB-name"></p>\
-            <p>Version:</p>\
-            <p>Origin url:</p>\
-            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
-            <ol id="easyIndexedDB-table-list" style="padding-left: 10px;">\
+            <p style="line-height:1.5;">DB Name : <input id="easyindexedDB-DB-name"></p>\
+            <p style="line-height:1.5;">Version:</p>\
+            <p style="line-height:1.5;">Origin url:</p>\
+            <p style="line-height:1.5;"><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
+            <ol id="easyIndexedDB-table-list" style="padding-left: 10px;line-height:1.5;">\
                 <li>\
                     <input> : <input><span><i class="fas fa-times"></i></span>\
                 </li>\
             </ol>\
-            <p><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
+            <p style="line-height:1.5"><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
         </li>\
     </ul>\
 </div>\
