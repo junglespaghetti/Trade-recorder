@@ -1,5 +1,5 @@
 function startMain(){
-    var htmlContents = '<div id="easyIndexedDB-contents" style="margin:2px;pedding:2px;font-size: medium;">\
+    var htmlContents = '<div id="easyIndexedDB-contents" style="margin:2px;pedding:2px;font-size: x-small;">\
     <style>#easyIndexedDB-contents p{ margin:4px;}</style>\
     <ul id="easyIndexedDB-pages" style="list-style:">\
         <li id="easyIndexedDb-edit-form">\
