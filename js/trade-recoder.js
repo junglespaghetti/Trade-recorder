@@ -61,16 +61,13 @@ function createEasyIndexedDB(){
 function selectDB(event){
     if(event.target.value){
         let eDB = createEasyIndexedDB();
-        let val = eDB.dbList.toArray().then(function(arr){
-            alert(arr[0]["table"]);
-            let a = JSON.parse(arr[0]["table"]);
-            alert(a[1]);
+        eDB.dbList.toArray().then(function(arr){
             if(arr.length == 0){
             alert("aaa");
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
-                
-                arr[0]["table"].forEach(function(val){
+            let tableName = JSON.parse(arr[0]["table"]);
+                tableName.forEach(function(val){
                     let option = document.createElement("option");
                     option.text = val.name;
                     option.value = val.name;
