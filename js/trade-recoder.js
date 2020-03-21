@@ -4,16 +4,16 @@ function startMain(){
     <ul id="easyIndexedDB-pages" style="list-style:">\
         <li id="easyIndexedDb-edit-form">\
             <h3>Easy IndexedDB</h3>\
-            <p>DB Name : <input id="easyindexedDB-DB-name"></p>\
-            <p>Version:</p>\
-            <p>Origin url:</p>\
-            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
+            <p style="line-height:1.2">DB Name : <input id="easyindexedDB-DB-name"></p>\
+            <p style="line-height:1.2">Version:</p>\
+            <p style="line-height:1.2">Origin url:</p>\
+            <p style="line-height:1.2"><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
             <ol id="easyIndexedDB-table-list" style="padding-left: 10px;">\
                 <li>\
                     <input style="width:80px;"> : <input><span style="margin-left: 8px"><i class="fas fa-times"></i></span>\
                 </li>\
             </ol>\
-            <p style="margin-top: 8px">><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
+            <p style="margin-top: 8px"><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
         </li>\
     </ul>\
 </div>\
