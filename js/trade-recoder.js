@@ -73,6 +73,7 @@ function createFrame(){
                  '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                  '</div>',
   callback: function (panel) {
+      alert("aaa");
     Dexie.exists(easyIndexedDB).then(function(exists){
     var eDB = new Dexie(easyIndexedDB);
     if(!exists){
