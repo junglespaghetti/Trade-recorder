@@ -71,8 +71,6 @@ function selectDB(event){
                 })  
             }
         });
-        
-        }
         eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
             alert(arr.length);
         });
