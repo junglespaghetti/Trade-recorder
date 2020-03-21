@@ -108,6 +108,7 @@ function selectTable(event){
 
                 }
                 tableName.forEach(function(val){
+                    alert(val);
                     if(event.target.value != val){
                         let option = document.createElement("option");
                         option.text = val;
