@@ -42,15 +42,21 @@ function startMain(){
 function createEasyIndexedDB(){
     alert(bbb);
     Dexie.exists("easyIndexedDB").then(function(exists){
+        if(!exists){
+            var eDB = new Dexie("easyIndexedDB");
+                eDB.version(1).stores({
+                dbList: "++id, name, version, table ",
+                settings: "name, value"
+            });
+            eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
+            eDB.settings.put({name:"status",value:"new"});
+            eDB.close();
+        }
         var eDB = new Dexie("easyIndexedDB");
         eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
         });
-        if(!exists){
-            eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
-            eDB.settings.put({name:"status",value:"new"});
-        }
         return eDB
     });
 }
