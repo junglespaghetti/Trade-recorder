@@ -1,6 +1,6 @@
 function startMain(){
-    var htmlContents = '<div id="easyIndexedDB-contents" style="margin:8px;pedding:2px;">\
-    <style>#easyIndexedDB-contents p{ margin:3px;}</style>\
+    var htmlContents = '<div id="easyIndexedDB-contents" style="margin:2px;pedding:2px;">\
+    <style>#easyIndexedDB-contents p{ margin:4px;}</style>\
     <ul id="easyIndexedDB-pages" style="list-style:">\
         <li id="easyIndexedDb-edit-form">\
             <h3>Easy IndexedDB</h3>\
@@ -8,7 +8,7 @@ function startMain(){
             <p>Version:</p>\
             <p>Origin url:</p>\
             <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
-            <ol id="easyIndexedDB-table-list" style="padding-left: 10px;">\
+            <ol id="easyIndexedDB-table-list" style="padding-left: 10px;margin-top: 8px;">\
                 <li>\
                     <input style="width:80px;"> : <input><span style="margin-left: 8px"><i class="fas fa-times"></i></span>\
                 </li>\
