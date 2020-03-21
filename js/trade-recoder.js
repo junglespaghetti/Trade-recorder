@@ -16,6 +16,12 @@ function startMain(){
         callback: function (panel) {
             alert("aaa");
             var eDB = createEasyIndexedDB();
+            Dexie.exists("easyIndexedDB").then(function(exists){
+                if(!exists){
+                    eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
+                    eDB.settings.put({name:"status",value:"new"});
+                }
+            });
             eDB.dbList.toArray().then(function(data) {
                 let dataList = document.getElementById("db-list");
                 data.forEach(function(val){
@@ -40,26 +46,12 @@ function startMain(){
     })
 }
 function createEasyIndexedDB(){
-    alert("fff");
-    Dexie.exists("easyIndexedDB").then(function(exists){
-        alert("ggg");
-        if(!exists){
-            var eDB = new Dexie("easyIndexedDB");
-                eDB.version(1).stores({
-                dbList: "++id, name, version, table ",
-                settings: "name, value"
-            });
-            eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
-            eDB.settings.put({name:"status",value:"new"});
-            eDB.close();
-        }
-        var eDB = new Dexie("easyIndexedDB");
-        eDB.version(1).stores({
+    var eDB = new Dexie("easyIndexedDB");
+    eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
-        });
-        return eDB
-    });
+     });
+    return eDB
 }
 
 
