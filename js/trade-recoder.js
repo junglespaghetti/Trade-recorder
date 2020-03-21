@@ -75,11 +75,14 @@ function createFrame(){
   callback: function (panel) {
       Dexie.exists("easyIndexedDB").then(function(exists){
     var eDB = new Dexie("easyIndexedDB");
-    
+    if(!exists){
     eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
         });
+    }else{
+        eDB.version(1);
+    }
     alert("easyIndexedDB");   
         eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
         eDB.settings.put({name:"status",value:"new"});
