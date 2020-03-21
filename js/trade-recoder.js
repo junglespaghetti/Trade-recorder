@@ -4,7 +4,7 @@ function startMain(){
     <ul id="easyIndexedDB-pages" style="list-style:">\
         <li id="easyIndexedDb-edit-form">\
             <h3>Easy IndexedDB</h3>\
-            <p>DB Name : <input id="easyindexedDB-DB-name"></p>\
+            <p>DB Name : <input id="easyindexedDB-DB-name" style="margin:2px;pedding:2px;"></p>\
             <p>Version:</p>\
             <p>Origin url:</p>\
             <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
