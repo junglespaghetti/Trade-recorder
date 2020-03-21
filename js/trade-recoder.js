@@ -29,6 +29,7 @@ db.friends.toArray().then(function(data) {
 }
 
 function iniEasyIdexedDB(){
+    alert("aaa");
 Dexie.exists(easyIndexedDB).then(function(exists){
     var eDB = new Dexie(easyIndexedDB);
     if(!exists){
@@ -43,7 +44,7 @@ Dexie.exists(easyIndexedDB).then(function(exists){
     }
 eDB.dbList.toArray().then(function(data) {
     let dataList = document.getElementById("db-list");
-    alert(data[0].name);
+    
     data.forEach(function(val){
         let option = document.createElement("option");
         option.text = val.name;
@@ -72,7 +73,7 @@ function createFrame(){
                  '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                  '</div>',
   callback: function (panel) {
-    iniEasyIdexedDB()
+    iniEasyIdexedDB();
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
