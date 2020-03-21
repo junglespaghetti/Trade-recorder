@@ -58,7 +58,7 @@ function selectDB(event){
     alert(event.target.value);
     if(!event.target.value){
         let eDB = createEasyIndexedDB();
-        eDB.dbList.where({name:event.target.value}).toArray().then(function(arr){
+        eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
             alert(arr.length);
         });
     }
