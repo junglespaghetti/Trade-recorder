@@ -72,6 +72,7 @@ function selectDB(event){
                 while (tableList.firstChild) {
                 tableList.removeChild(tableList.firstChild);
                 }
+                tableList.value = "";
                 tableName.forEach(function(val){
                     let option = document.createElement("option");
                     option.text = val;
