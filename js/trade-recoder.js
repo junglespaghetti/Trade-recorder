@@ -3,8 +3,8 @@ function startMain(){
         headerTitle: 'host:' + location.hostname,
         position:    'center-top 0 58',
         contentSize: '450 250',
-        headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:8pt;"><datalist id="db-list"><option value="this db"></datalist>',
-        headerToolbar: '<input type="text" id="table-input" list="table-list" placeholder="input Table name" autocomplete="off" style="font-size:8pt;"><datalist id="table-list"><option value="table"></datalist>' +
+        headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:8pt;"><datalist id="db-list"></datalist>',
+        headerToolbar: '<input type="text" id="table-input" list="table-list" placeholder="input Table name" autocomplete="off" style="font-size:8pt;"><datalist id="table-list"></datalist>' +
                     '<div style="margin-left:8px;">' +               
                     '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
                     '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
@@ -75,6 +75,12 @@ function selectDB(event){
                     tableList.appendChild(option);
                 })  
             }
+            let dataList = document.getElementById("db-list");
+                    arr.forEach(function(val){
+                        let option = document.createElement("option");
+                        option.text = val.name;
+                        option.value = val.name;
+                        dataList.appendChild(option);
         });
         eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
             alert(arr.length);
