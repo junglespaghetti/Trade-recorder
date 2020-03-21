@@ -58,7 +58,7 @@ function selectDB(event){
     alert(event.target.value);
     if(event.target.value){
         let eDB = createEasyIndexedDB();
-        let val = eDB.dbList.toArray().when(function(arr){
+        let val = eDB.dbList.toArray().then(function(arr){
             if(arr.length == 0){
             alert("aaa");
             }else if(arr.length == 1){
