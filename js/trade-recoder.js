@@ -13,8 +13,7 @@ function startMain(){
                     <input style="width:80px;"> : <input><span style="margin-left: 8px"><i class="fas fa-times"></i></span>\
                 </li>\
             </ol>\
-            <br>\
-            <p><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
+            <p style="margin-top: 8px">><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
         </li>\
     </ul>\
 </div>\
