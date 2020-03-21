@@ -62,8 +62,8 @@ function createFrame(){
     headerTitle: 'host:' + location.hostname,
     position:    'center-top 0 58',
     contentSize: '450 250',
-    headerLogo:'<input type="text" name="a" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:6pt;"><datalist id="db-list"><option value="this db"></datalist>',
-    headerToolbar: '<input type="text" name="a" list="table-list" placeholder="input Table name" autocomplete="off"><datalist id="table-list"><option value="table"></datalist>' +
+    headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:8pt;"><datalist id="db-list"><option value="this db"></datalist>',
+    headerToolbar: '<input type="text" id="table-input" list="table-list" placeholder="input Table name" autocomplete="off" style="font-size:8pt;"><datalist id="table-list"><option value="table"></datalist>' +
                     '<div style="margin-left:8px;">' +               
                     '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
                    '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
@@ -97,6 +97,8 @@ eDB.dbList.toArray().then(function(data) {
     })
 });
 });
+let dataInput = document.getElementById("db-input");
+    dataInput.addEventListener('chnge', selestDB(), false);
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
@@ -108,3 +110,6 @@ eDB.dbList.toArray().then(function(data) {
 });
 }
 
+function selectDB(){
+    alert("aaaa");
+}
