@@ -92,8 +92,8 @@ function selectDB(event){
 }
 
 function selectTable(event){
-    let dbName = document.getElementById("db-list").value;
-    alert(dbName);
+    let dbName = document.getElementById("db-list");
+    alert(dbName.value);
     if(event.target.value){
         let eDB = createEasyIndexedDB();
         eDB.dbList.where('name').equalsIgnoreCase(event.target.value).toArray().then(function(arr){
