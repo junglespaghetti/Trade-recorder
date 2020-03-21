@@ -56,7 +56,9 @@ function createEasyIndexedDB(){
 
 function selectDB(event){
     if(!event.target.value){
-
+        let eDB = createEasyIndexedDB();
+        let val = eDB.dbList.where({name:event.target.value});
+        alert(val[0]);
     }
 }
 
