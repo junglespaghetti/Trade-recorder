@@ -58,9 +58,20 @@ function selectDB(event){
     alert(event.target.value);
     if(event.target.value){
         let eDB = createEasyIndexedDB();
-        let val = eDB.dbList.toArray();
-        if(val.length == 1){
+        let val = eDB.dbList.toArray().when(function(arr){
+            if(arr.length == 0){
             alert("aaa");
+            }else if(arr.length == 1){
+            let tableList = document.getElementById("table-list");
+                arr[0]["table"].forEach(function(val){
+                    let option = document.createElement("option");
+                    option.text = val.name;
+                    option.value = val.name;
+                    tableList.appendChild(option);
+                })  
+            }
+        });
+        
         }
         eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
             alert(arr.length);
