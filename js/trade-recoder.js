@@ -69,7 +69,9 @@ function selectDB(event){
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
             let tableName = JSON.parse(arr[0]["table"]);
-            alert(tableName[0]);
+                while (tableList.firstChild) {
+                tableList.removeChild(tableList.firstChild);
+                }
                 tableName.forEach(function(val){
                     let option = document.createElement("option");
                     option.text = val;
