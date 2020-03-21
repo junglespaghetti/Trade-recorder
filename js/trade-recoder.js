@@ -73,7 +73,7 @@ function createFrame(){
                  '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                  '</div>',
   callback: function (panel) {
-      
+      Dexie.exists("easyIndexedDB").then(function(exists){
     var eDB = new Dexie("easyIndexedDB");
     
     eDB.version(1).stores({
@@ -92,6 +92,7 @@ eDB.dbList.toArray().then(function(data) {
         option.value = val.name;
         dataList.appendChild(option);
     })
+});
 });
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
