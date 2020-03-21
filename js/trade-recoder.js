@@ -40,7 +40,6 @@ function startMain(){
     })
 }
 function createEasyIndexedDB(){
-    alert(bbb);
     Dexie.exists("easyIndexedDB").then(function(exists){
         if(!exists){
             var eDB = new Dexie("easyIndexedDB");
