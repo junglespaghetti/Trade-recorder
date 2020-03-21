@@ -76,6 +76,7 @@ function createFrame(){
       alert(easyIndexedDB);
     Dexie.exists(easyIndexedDB).then(function(exists){
     var eDB = new Dexie(easyIndexedDB);
+    alert("aaa");
     if(!exists){
         eDB.version(1).stores({
         dbList: "++id, name, version, table ",
@@ -97,7 +98,7 @@ eDB.dbList.toArray().then(function(data) {
     })
 });
 });
-alert("aaa")
+
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
