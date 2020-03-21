@@ -38,6 +38,7 @@ function startMain(){
             dbInput.addEventListener('change',function (event){selectDB(event)});
             let tableInput = document.getElementById("table-input");
             tableInput.addEventListener('change',function (event){selectTable(event)});
+            tableInput.addEventListener('click',function (event){tableInput.value=""});
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
                     item.style.cursor = 'pointer';
                     item.style.marginRight = '4px';
