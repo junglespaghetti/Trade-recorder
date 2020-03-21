@@ -73,10 +73,9 @@ function createFrame(){
                  '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                  '</div>',
   callback: function (panel) {
-      alert(easyIndexedDB);
-    Dexie.exists(easyIndexedDB).then(function(exists){
-        alert("aaa");
+      
     var eDB = new Dexie(easyIndexedDB);
+    alert(easyIndexedDB);
     eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
@@ -94,8 +93,6 @@ eDB.dbList.toArray().then(function(data) {
         dataList.appendChild(option);
     })
 });
-});
-
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
