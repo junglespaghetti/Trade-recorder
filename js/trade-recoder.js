@@ -2,8 +2,8 @@ const easyIndexedDB = "easyIndexedDB"
 
 function startMain(){
     
-Dexie.exists(recorderDBName).then(function(exists){
-    var eDB = new Dexie(recorderDBName);
+Dexie.exists(easyIndexedDB).then(function(exists){
+    var eDB = new Dexie(easyIndexedDB);
     if(!exists){
         eDB.version(1).stores({
         dbList: "++id, name, version, table ",
@@ -12,7 +12,7 @@ Dexie.exists(recorderDBName).then(function(exists){
     }else{
         eDB.version(1).open();
     }
-        eDB.dbList.add({name:recorderDBName,version:1,table:["dbList","settings"]});
+        eDB.dbList.add({name:easyIndexedDB,version:1,table:["dbList","settings"]});
         eDB.settings.add({name:"status",value:"new"});
     }
 eDB.dbList.toArray().then(function(data) {
