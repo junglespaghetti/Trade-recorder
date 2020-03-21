@@ -30,7 +30,6 @@ function startMain(){
                     })
                 });
             });
-            alert("aaaa");
             let dbInput = document.getElementById("db-input");
             dbInput.addEventListener('change',function (event){selectDB(event)});
             let tableInput = document.getElementById("table-input");
@@ -56,7 +55,7 @@ function createEasyIndexedDB(){
 
 
 function selectDB(event){
-    alert("bbb");
+    alert(event.target.value);
     if(!event.target.value){
         let eDB = createEasyIndexedDB();
         let val = eDB.dbList.where({name:event.target.value}).toArray();
