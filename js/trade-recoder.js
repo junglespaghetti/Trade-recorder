@@ -42,12 +42,13 @@ Dexie.exists(easyIndexedDB).then(function(exists){
         eDB.version(1).open();
     }
 eDB.dbList.toArray().then(function(data) {
-    let dbList = document.getElementById("db-list");
+    let dataList = document.getElementById("db-list");
+    alert(data[0].name);
     data.forEach(function(val){
         let option = document.createElement("option");
         option.text = val.name;
         option.value = val.name;
-        dbList.appendChild(option);
+        dataList.appendChild(option);
     })
 });
 });
