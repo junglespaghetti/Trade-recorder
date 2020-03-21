@@ -42,7 +42,7 @@ function startMain(){
 function createEasyIndexedDB(){
     alert("fff");
     Dexie.exists("easyIndexedDB").then(function(exists){
-        
+        alert("ggg");
         if(!exists){
             var eDB = new Dexie("easyIndexedDB");
                 eDB.version(1).stores({
