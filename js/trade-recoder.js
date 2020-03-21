@@ -14,7 +14,6 @@ function startMain(){
                     '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                     '</div>',
         callback: function (panel) {
-            alert("aaa");
             var eDB = createEasyIndexedDB();
             Dexie.exists("easyIndexedDB").then(function(exists){
                 if(!exists){
@@ -56,7 +55,6 @@ function createEasyIndexedDB(){
 
 
 function selectDB(event){
-    alert(event.target.value);
     if(event.target.value){
         let eDB = createEasyIndexedDB();
         let val = eDB.dbList.toArray().then(function(arr){
@@ -64,6 +62,7 @@ function selectDB(event){
             alert("aaa");
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
+                alert(arr[0]["table"][0]);
                 arr[0]["table"].forEach(function(val){
                     let option = document.createElement("option");
                     option.text = val.name;
