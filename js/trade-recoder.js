@@ -50,6 +50,10 @@ Dexie.exists(easyIndexedDB).then(function(exists){
 eDB.dbList.toArray().then(function(data) {
     let dbList = document.getElementById("db-list");
     data.forEach(function(val){
+        let option = document.createElement("option");
+        option.text = val.name;
+        option.value = val.name;
+        dbList.appendChild(option);
     })
 });
 }
