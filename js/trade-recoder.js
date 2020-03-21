@@ -14,21 +14,25 @@ function startMain(){
                     '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                     '</div>',
         callback: function (panel) {
-            var eDB = createEasyIndexedDB();
             Dexie.exists("easyIndexedDB").then(function(exists){
+                var eDB = new Dexie("easyIndexedDB");
+                eDB.version(1).stores({
+                    dbList: "++id, name, version, table ",
+                    settings: "name, value"
+                });
                 if(!exists){
                     eDB.dbList.put({name:"easyIndexedDB",version:1,table:'["dbList","settings"]'});
                     eDB.settings.put({name:"status",value:"new"});
                 }
-            });
-            eDB.dbList.toArray().then(function(data) {
-                let dataList = document.getElementById("db-list");
-                data.forEach(function(val){
-                    let option = document.createElement("option");
-                    option.text = val.name;
-                    option.value = val.name;
-                    dataList.appendChild(option);
-                })
+                eDB.dbList.toArray().then(function(data) {
+                    let dataList = document.getElementById("db-list");
+                    data.forEach(function(val){
+                        let option = document.createElement("option");
+                        option.text = val.name;
+                        option.value = val.name;
+                        dataList.appendChild(option);
+                    })
+                });
             });
             let dbInput = document.getElementById("db-input");
             dbInput.addEventListener('change',function (event){selectDB(event)});
