@@ -76,7 +76,7 @@ function createFrame(){
       alert(easyIndexedDB);
     Dexie.exists(easyIndexedDB).then(function(exists){
     var eDB = new Dexie(easyIndexedDB);
-    alert("aaa");
+    
     if(!exists){
         eDB.version(1).stores({
         dbList: "++id, name, version, table ",
@@ -89,7 +89,7 @@ function createFrame(){
     }
 eDB.dbList.toArray().then(function(data) {
     let dataList = document.getElementById("db-list");
-    
+    alert("aaa");
     data.forEach(function(val){
         let option = document.createElement("option");
         option.text = val.name;
