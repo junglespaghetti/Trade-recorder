@@ -45,6 +45,7 @@ function startMain(){
     })
 }
 function createEasyIndexedDB(){
+    alert("yyy");
     var eDB = new Dexie("easyIndexedDB");
     eDB.version(1).stores({
         dbList: "++id, name, version, table ",
