@@ -58,11 +58,12 @@ function selectDB(event){
     if(event.target.value){
         let eDB = createEasyIndexedDB();
         let val = eDB.dbList.toArray().then(function(arr){
+            alert(arr[0]["table"]);
             if(arr.length == 0){
             alert("aaa");
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
-                alert(arr[0]["table"][0]);
+                
                 arr[0]["table"].forEach(function(val){
                     let option = document.createElement("option");
                     option.text = val.name;
