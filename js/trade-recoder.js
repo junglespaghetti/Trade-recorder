@@ -1,4 +1,24 @@
 function startMain(){
+    var htmlContents = '
+    <div id="easyIndexedDB-contents">\
+    <ul id="easyIndexedDB-pages" style="list-style: none;">\
+        <li id="easyIndexedDb-edit-form">\
+            <h3>Easy IndexedDB</h3>\
+            <p>DB Name : <input id="easyindexedDB-DB-name"></p>\
+            <p>Version:</p>\
+            <p>Origin url:</p>\
+            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
+            <ol id="easyIndexedDB-table-list" style="padding-left: 10px;">\
+                <li>\
+                    <input> : <input><span><i class="fas fa-times"></i></span>\
+                </li>\
+            </ol>\
+            <p><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
+        </li>\
+    </ul>\
+</div>\
+'
+alert(htmlContents);
     var easyIndexedDB = jsPanel.create({
         headerTitle: 'host:' + location.hostname,
         position:    'center-top 0 58',
@@ -6,7 +26,7 @@ function startMain(){
         headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:10pt;"><datalist id="db-list"></datalist>',
         headerToolbar: '<input type="text" id="table-input" list="table-list" placeholder="input Table name" autocomplete="off" style="font-size:10pt;"><datalist id="table-list"></datalist>' +
                     '<div style="margin-left:8px;">' +               
-                    '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
+                    '<span id="bus"><i class="fas fa-file-import fa-lg"></i></span>'+
                     '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
                     '<span id="car"><i class="fas fa-hand-holding-usd fa-lg"></i></span>'+
                     '<span id="car"><i class="fas fa-money-check-alt fa-lg"></i></span>'+
