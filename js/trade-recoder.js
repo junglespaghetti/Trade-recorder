@@ -17,7 +17,7 @@ function startMain(){
             var eDB = createEasyIndexedDB();
             Dexie.exists("easyIndexedDB").then(function(exists){
                 if(!exists){
-                    eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
+                    eDB.dbList.put({name:"easyIndexedDB",version:1,table:'["dbList","settings"]'});
                     eDB.settings.put({name:"status",value:"new"});
                 }
             });
