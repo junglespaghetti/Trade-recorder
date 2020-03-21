@@ -15,9 +15,7 @@ function startMain(){
                     '</div>',
         callback: function (panel) {
             Dexie.exists("easyIndexedDB").then(function(exists){
-                alert("aaa");
                 var eDB = createEasyIndexedDB();
-                alert("bbb");
                 if(!exists){
                     eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
                     eDB.settings.put({name:"status",value:"new"});
@@ -32,6 +30,7 @@ function startMain(){
                     })
                 });
             });
+            alert("aaaa");
             let dbInput = document.getElementById("db-input");
             dbInput.addEventListener('change',function (event){selectDB(event)});
             let tableInput = document.getElementById("table-input");
@@ -57,6 +56,7 @@ function createEasyIndexedDB(){
 
 
 function selectDB(event){
+    alert("bbb");
     if(!event.target.value){
         let eDB = createEasyIndexedDB();
         let val = eDB.dbList.where({name:event.target.value});
