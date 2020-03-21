@@ -98,7 +98,7 @@ eDB.dbList.toArray().then(function(data) {
 });
 });
 let dataInput = document.getElementById("db-input");
-    dataInput.addEventListener('change', (event) => {aleret(event.target.value)}, true);
+    dataInput.addEventListener('change', (event) => {aleret(event.target.value)});
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
