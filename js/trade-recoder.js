@@ -4,15 +4,22 @@ function startMain(){
     
 Dexie.exists(recorderDBName).then(function(exists){
     var eDB = new Dexie(recorderDBName);
+    if(!exists){
         eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
         }).open();;
-    if(!exists){
+    }else{
+        eDB.version(1).open();
+    }
         eDB.dbList.add({name:recorderDBName,version:1,table:["dbList","settings"]});
         eDB.settings.add({name:"status",value:"new"});
     }
 eDB.dbList.toArray().then(function(data) {
+    let dbList = document.getElementById("db-list");
+    data.forEach(function(val){
+
+    })
 
 });
 
