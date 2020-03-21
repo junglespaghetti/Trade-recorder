@@ -76,11 +76,12 @@ function selectDB(event){
                 })  
             }
             let dataList = document.getElementById("db-list");
-                    arr.forEach(function(val){
-                        let option = document.createElement("option");
-                        option.text = val.name;
-                        option.value = val.name;
-                        dataList.appendChild(option);
+            arr.forEach(function(val){
+                let option = document.createElement("option");
+                option.text = val.name;
+                option.value = val.name;
+                dataList.appendChild(option);
+            })
         });
         eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
             alert(arr.length);
