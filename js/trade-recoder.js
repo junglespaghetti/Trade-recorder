@@ -84,8 +84,6 @@ function createFrame(){
    eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
         eDB.settings.put({name:"status",value:"new"});
     }
-    alert("easyIndexedDB");   
-     
     
 eDB.dbList.toArray().then(function(data) {
     let dataList = document.getElementById("db-list");
@@ -98,7 +96,7 @@ eDB.dbList.toArray().then(function(data) {
 });
 });
 let dataInput = document.getElementById("db-input");
-    dataInput.addEventListener('change',function (event){alert("dddd")});
+    dataInput.addEventListener('change',function (event){selectDB(event)});
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
@@ -110,6 +108,6 @@ let dataInput = document.getElementById("db-input");
 });
 }
 
-function selectDB(){
+function selectDB(event){
     alert("aaaa");
 }
