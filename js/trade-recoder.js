@@ -94,31 +94,27 @@ function selectDB(event){
 function selectTable(event){
     let dbName = document.getElementById("db-input").value;
     alert(dbName);
-    if(event.target.value){
+    if(event.target.value && dbName){
         let eDB = createEasyIndexedDB();
-        eDB.dbList.where('name').equalsIgnoreCase(event.target.value).toArray().then(function(arr){
+        eDB.dbList.where('name').equalsIgnoreCase(dbName).toArray().then(function(arr){
             if(arr.length == 0){
-            alert("aaa");
+                alert("aaa");
             }else if(arr.length == 1){
-            let tableList = document.getElementById("table-list");
-            let tableName = JSON.parse(arr[0]["table"]);
-            alert(tableName[0]);
+                let tableList = document.getElementById("table-list");
+                let tableName = JSON.parse(arr[0]["table"]);
+                if (tableName.includes(event.target.value)) {
+                    alert(tableName[0]);
+                }else{
+
+                }
                 tableName.forEach(function(val){
                     let option = document.createElement("option");
                     option.text = val;
                     option.value = val;
                     tableList.appendChild(option);
                 })  
+ 
             }
-            let dataList = document.getElementById("db-list");
-            arr.forEach(function(val){
-                if(event.target.value != val.name){
-                    let option = document.createElement("option");
-                    option.text = val.name;
-                    option.value = val.name;
-                    dataList.appendChild(option);
-                }
-            })
         });
         eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
             alert(arr.length);
