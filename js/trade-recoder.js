@@ -68,11 +68,12 @@ function selectDB(event){
             alert("aaa");
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
+            let tableInput = document.getElementById("table-input");
             let tableName = JSON.parse(arr[0]["table"]);
                 while (tableList.firstChild) {
                 tableList.removeChild(tableList.firstChild);
                 }
-                tableList.value = "";
+                tableInput.value = "";
                 tableName.forEach(function(val){
                     let option = document.createElement("option");
                     option.text = val;
@@ -81,33 +82,26 @@ function selectDB(event){
                 })  
             }
         });
-        eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
-            alert(arr.length);
-        });
     }
 }
 
 function selectTable(event){
-    let dbName = document.getElementById("db-input").value;
-    alert(dbName);
-    if(event.target.value && dbName){
+    let dbInput = document.getElementById("db-input").value;
+    if(event.target.value && dbInput){
         let eDB = createEasyIndexedDB();
-        eDB.dbList.where('name').equalsIgnoreCase(dbName).toArray().then(function(arr){
+        eDB.dbList.where('name').equalsIgnoreCase(dbInput).toArray().then(function(arr){
             if(arr.length == 0){
                 alert("aaa");
             }else if(arr.length == 1){
                 let tableList = document.getElementById("table-list");
                 let tableName = JSON.parse(arr[0]["table"]);
                 if (tableName.includes(event.target.value)) {
-                    alert(tableName[0]);
+            
                 }else{
 
                 }
  
             }
-        });
-        eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
-            alert(arr.length);
         });
     }
 }
