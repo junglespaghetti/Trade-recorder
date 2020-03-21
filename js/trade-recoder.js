@@ -49,7 +49,6 @@ function startMain(){
     })
 }
 function createEasyIndexedDB(){
-    alert("yyy");
     var eDB = new Dexie("easyIndexedDB");
     eDB.version(1).stores({
         dbList: "++id, name, version, table ",
@@ -64,6 +63,8 @@ function selectDB(event){
         let eDB = createEasyIndexedDB();
         let val = eDB.dbList.toArray().then(function(arr){
             alert(arr[0]["table"]);
+            let a = JSON.parse(arr[0]["table"]);
+            alert(a[1]);
             if(arr.length == 0){
             alert("aaa");
             }else if(arr.length == 1){
