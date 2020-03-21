@@ -14,6 +14,7 @@ function startMain(){
                     '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                     '</div>',
         callback: function (panel) {
+            alert("aaa");
             var eDB = createEasyIndexedDB();
             eDB.dbList.toArray().then(function(data) {
                 let dataList = document.getElementById("db-list");
