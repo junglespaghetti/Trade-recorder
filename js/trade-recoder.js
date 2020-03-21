@@ -37,7 +37,7 @@ function startMain(){
             let dbInput = document.getElementById("db-input");
             dbInput.addEventListener('change',function (event){selectDB(event)});
             let tableInput = document.getElementById("table-input");
-            tableInput.addEventListener('change',function (event){selectTable(event)});
+            tableInput.addEventListener('change',function (event){selectTable(event,document.getElementById("db-list").value)});
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
                     item.style.cursor = 'pointer';
                     item.style.marginRight = '4px';
@@ -91,9 +91,9 @@ function selectDB(event){
     }
 }
 
-function selectTable(event){
+function selectTable(event,name){
     let dbName = document.getElementById("db-list");
-    alert(dbName.value);
+    alert(name);
     if(event.target.value){
         let eDB = createEasyIndexedDB();
         eDB.dbList.where('name').equalsIgnoreCase(event.target.value).toArray().then(function(arr){
