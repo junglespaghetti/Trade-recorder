@@ -1,6 +1,6 @@
 function startMain(){
     var htmlContents = '<div id="easyIndexedDB-contents">\
-    <dev style="margin:8px;>\
+    <dev style="margin:8px;border:2px;pedding:4px;>\
     <ul id="easyIndexedDB-pages" style="list-style: none;margin-left: 4px;">\
         <li id="easyIndexedDb-edit-form">\
             <h3>Easy IndexedDB</h3>\
