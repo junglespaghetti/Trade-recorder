@@ -9,7 +9,7 @@ function startMain(){
             <p style="line-height:0.5;"><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
             <ol id="easyIndexedDB-table-list" style="padding-left: 10px;">\
                 <li>\
-                    <input style="width:100px;"> : <input><span><i class="fas fa-times"></i></span>\
+                    <input style="width:60px;"> : <input><span><i class="fas fa-times"></i></span>\
                 </li>\
             </ol>\
             <p><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
