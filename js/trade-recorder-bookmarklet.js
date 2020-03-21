@@ -1,10 +1,10 @@
 javascript: (function(f, urls,cssUlrs, i, s,c) {
   urls = [
     "https://cdn.jsdelivr.net/npm/i18n-js@3.5.1/app/assets/javascripts/i18n.min.js",
-    "https://cdn.jsdelivr.net/npm/jspanel4@4.9.4/dist/jspanel.js",
     "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/dexie/2.0.4/dexie.min.js",
-    "https://junglespaghetti.github.io/trade-recorder/js/trade-recoder.js"
+    "https://junglespaghetti.github.io/trade-recorder/js/trade-recoder.js",
+    "https://cdn.jsdelivr.net/npm/jspanel4@4.9.4/dist/jspanel.js"
   ];
   cssUlrs = [
     "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
