@@ -36,6 +36,7 @@ function startMain(){
             });
             let dbInput = document.getElementById("db-input");
             dbInput.addEventListener('change',function (event){selectDB(event)});
+            dbInput.addEventListener('click',function (event){dbInput.value=""});
             let tableInput = document.getElementById("table-input");
             tableInput.addEventListener('change',function (event){selectTable(event)});
             tableInput.addEventListener('click',function (event){tableInput.value=""});
@@ -76,15 +77,6 @@ function selectDB(event){
                     tableList.appendChild(option);
                 })  
             }
-            let dataList = document.getElementById("db-list");
-            arr.forEach(function(val){
-                if(event.target.value != val.name){
-                    let option = document.createElement("option");
-                    option.text = val.name;
-                    option.value = val.name;
-                    dataList.appendChild(option);
-                }
-            })
         });
         eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
             alert(arr.length);
@@ -108,15 +100,6 @@ function selectTable(event){
                 }else{
 
                 }
-                tableName.forEach(function(val){
-                    if(event.target.value != val){
-                        alert(val);
-                        let option = document.createElement("option");
-                        option.text = val;
-                        option.value = val;
-                        tableList.appendChild(option);
-                    }
-                })  
  
             }
         });
