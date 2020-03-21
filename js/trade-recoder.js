@@ -15,7 +15,9 @@ function startMain(){
                     '</div>',
         callback: function (panel) {
             Dexie.exists("easyIndexedDB").then(function(exists){
+                alert("aaa");
                 var eDB = createEasyIndexedDB();
+                alert("bbb");
                 if(!exists){
                     eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
                     eDB.settings.put({name:"status",value:"new"});
