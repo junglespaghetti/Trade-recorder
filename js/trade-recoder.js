@@ -92,7 +92,38 @@ function selectDB(event){
 }
 
 function selectTable(event){
-
+    let dbName = document.getElementById("db-list").value;
+    alert(dbName);
+    if(event.target.value){
+        let eDB = createEasyIndexedDB();
+        eDB.dbList.where('name').equalsIgnoreCase(event.target.value).toArray().then(function(arr){
+            if(arr.length == 0){
+            alert("aaa");
+            }else if(arr.length == 1){
+            let tableList = document.getElementById("table-list");
+            let tableName = JSON.parse(arr[0]["table"]);
+            alert(tableName[0]);
+                tableName.forEach(function(val){
+                    let option = document.createElement("option");
+                    option.text = val;
+                    option.value = val;
+                    tableList.appendChild(option);
+                })  
+            }
+            let dataList = document.getElementById("db-list");
+            arr.forEach(function(val){
+                if(event.target.value != val.name){
+                    let option = document.createElement("option");
+                    option.text = val.name;
+                    option.value = val.name;
+                    dataList.appendChild(option);
+                }
+            })
+        });
+        eDB.dbList.where("name").equalsIgnoreCase(event.target.value).toArray().then(function(arr){
+            alert(arr.length);
+        });
+    }
 }
 
 async function getRecorderDB(){
