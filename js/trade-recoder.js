@@ -80,10 +80,10 @@ function createFrame(){
         dbList: "++id, name, version, table ",
         settings: "name, value"
         }).open();
-    if(!exists){   
-        eDB.dbList.add({name:easyIndexedDB,version:1,table:["dbList","settings"]});
-        eDB.settings.add({name:"status",value:"new"});
-    }
+       
+        eDB.dbList.put({name:easyIndexedDB,version:1,table:["dbList","settings"]});
+        eDB.settings.put({name:"status",value:"new"});
+    
 eDB.dbList.toArray().then(function(data) {
     let dataList = document.getElementById("db-list");
     data.forEach(function(val){
