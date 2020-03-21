@@ -108,10 +108,12 @@ function selectTable(event){
 
                 }
                 tableName.forEach(function(val){
-                    let option = document.createElement("option");
-                    option.text = val;
-                    option.value = val;
-                    tableList.appendChild(option);
+                    if(event.target.value != val.name){
+                        let option = document.createElement("option");
+                        option.text = val;
+                        option.value = val;
+                        tableList.appendChild(option);
+                    }
                 })  
  
             }
