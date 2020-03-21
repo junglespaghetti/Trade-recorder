@@ -3,8 +3,8 @@ function startMain(){
         headerTitle: 'host:' + location.hostname,
         position:    'center-top 0 58',
         contentSize: '450 250',
-        headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:8pt;"><datalist id="db-list"></datalist>',
-        headerToolbar: '<input type="text" id="table-input" list="table-list" placeholder="input Table name" autocomplete="off" style="font-size:8pt;"><datalist id="table-list"></datalist>' +
+        headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:10pt;"><datalist id="db-list"></datalist>',
+        headerToolbar: '<input type="text" id="table-input" list="table-list" placeholder="input Table name" autocomplete="off" style="font-size:10pt;"><datalist id="table-list"></datalist>' +
                     '<div style="margin-left:8px;">' +               
                     '<span id="bus"><i class="fas fa-file-import fa-lg"></i></i></span>'+
                     '<span id="train"><i class="fas fa-file-download fa-lg"></i></span>'+
@@ -15,13 +15,14 @@ function startMain(){
                     '</div>',
         callback: function (panel) {
             Dexie.exists("easyIndexedDB").then(function(exists){
-                var eDB = new Dexie("easyIndexedDB");
-                eDB.version(1).stores({
+                let eDB = new Dexie("easyIndexedDB");
+                let tableData = {
                     dbList: "++id, name, version, table ",
                     settings: "name, value"
-                });
+                };
+                eDB.version(1).stores(tableData);
                 if(!exists){
-                    eDB.dbList.put({name:"easyIndexedDB",version:1,table:'["dbList","settings"]'});
+                    eDB.dbList.put({name:"easyIndexedDB",version:1,table:JSON.stringify(tableData)});
                     eDB.settings.put({name:"status",value:"new"});
                 }
                 eDB.dbList.toArray().then(function(data) {
@@ -51,7 +52,7 @@ function startMain(){
     })
 }
 function createEasyIndexedDB(){
-    var eDB = new Dexie("easyIndexedDB");
+    let eDB = new Dexie("easyIndexedDB");
     eDB.version(1).stores({
         dbList: "++id, name, version, table ",
         settings: "name, value"
@@ -69,15 +70,15 @@ function selectDB(event){
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
             let tableInput = document.getElementById("table-input");
-            let tableName = JSON.parse(arr[0]["table"]);
+            let tableData = JSON.parse(arr[0]["table"]);
                 while (tableList.firstChild) {
                 tableList.removeChild(tableList.firstChild);
                 }
                 tableInput.value = "";
-                tableName.forEach(function(val){
+                Object.keys(tableData).forEach(function (key) {
                     let option = document.createElement("option");
-                    option.text = val;
-                    option.value = val;
+                    option.text = key;
+                    option.value = key;
                     tableList.appendChild(option);
                 })  
             }
@@ -94,13 +95,12 @@ function selectTable(event){
                 alert("aaa");
             }else if(arr.length == 1){
                 let tableList = document.getElementById("table-list");
-                let tableName = JSON.parse(arr[0]["table"]);
-                if (tableName.includes(event.target.value)) {
+                let tableData = JSON.parse(arr[0]["table"]);
+                if (Object.keys(tableData).includes(event.target.value)) {
             
                 }else{
 
                 }
- 
             }
         });
     }
