@@ -40,8 +40,8 @@ function startMain(){
     })
 }
 function createEasyIndexedDB(){
+    var eDB = new Dexie("easyIndexedDB");
     Dexie.exists("easyIndexedDB").then(function(exists){
-        var eDB = new Dexie("easyIndexedDB");
         eDB.version(1).stores({
             dbList: "++id, name, version, table ",
             settings: "name, value"
@@ -50,8 +50,8 @@ function createEasyIndexedDB(){
             eDB.dbList.put({name:"easyIndexedDB",version:1,table:["dbList","settings"]});
             eDB.settings.put({name:"status",value:"new"});
         }
-    return eDB   
     });
+    return eDB
 }
 
 
