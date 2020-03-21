@@ -22,6 +22,7 @@ alert(htmlContents);
         headerTitle: 'host:' + location.hostname,
         position:    'center-top 0 58',
         contentSize: '450 250',
+        content:htmlContents,
         headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:10pt;"><datalist id="db-list"></datalist>',
         headerToolbar: '<input type="text" id="table-input" list="table-list" placeholder="input Table name" autocomplete="off" style="font-size:10pt;"><datalist id="table-list"></datalist>' +
                     '<div style="margin-left:8px;">' +               
