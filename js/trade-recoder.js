@@ -73,7 +73,29 @@ function createFrame(){
                  '<span id="bicycle"><i class="fas fa-calculator fa-lg"></i></span>' +
                  '</div>',
   callback: function (panel) {
-    iniEasyIdexedDB();
+    Dexie.exists(easyIndexedDB).then(function(exists){
+    var eDB = new Dexie(easyIndexedDB);
+    if(!exists){
+        eDB.version(1).stores({
+        dbList: "++id, name, version, table ",
+        settings: "name, value"
+        }).open();
+        eDB.dbList.add({name:easyIndexedDB,version:1,table:["dbList","settings"]});
+        eDB.settings.add({name:"status",value:"new"});
+    }else{
+        eDB.version(1).open();
+    }
+eDB.dbList.toArray().then(function(data) {
+    let dataList = document.getElementById("db-list");
+    
+    data.forEach(function(val){
+        let option = document.createElement("option");
+        option.text = val.name;
+        option.value = val.name;
+        dataList.appendChild(option);
+    })
+});
+});
     this.headertoolbar.querySelectorAll('span').forEach(function(item) {
       item.style.cursor = 'pointer';
       item.style.marginRight = '4px';
