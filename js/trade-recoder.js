@@ -93,7 +93,7 @@ function createEasyIndexedDB(){
     return eDB
 }
 
-function addTableListLi(tableName,field){
+function addTableListLi(tableLiName,field){
     let span = document.createElement("span");
     span.innerHTML = '<i class="fas fa-times"></i>';
     span.class = 'easyIndexedDB-tablelist-delete';
@@ -104,7 +104,7 @@ function addTableListLi(tableName,field){
     });
     let tableOl = document.getElementById("easyIndexedDB-table-list");
     let li = document.createElement("li");
-    let tableInput = tableName ? 'value="' + tableName + '" ' : "" ;
+    let tableInput = tableLiName ? 'value="' + tableLiName + '" ' : "" ;
     let fieldInput = field ? 'value="' + field + '" ' : "" ;
     li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px;" placeholder="Table Name" '+ tableName + '> : <input class="easyIndexedDV-field-li" ' + fieldInput + 'placeholder="Comma separated field">';
     li.appendChild(span);
