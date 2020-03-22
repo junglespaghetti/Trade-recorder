@@ -96,7 +96,7 @@ function createEasyIndexedDB(){
 function addTableListLi(){
     let tableOl = document.getElementById("easyIndexedDB-table-list");
     let li = document.createElement("li");
-    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px;" value="'+key+'" placeholder="Table Name"> : <input class="easyIndexedDV-field-li" value="'+ tableData[key] +'" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
+    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px; placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
     let span = innerHTML.getElementByClass("easyIndexedDB-tablelist-delete");
     alert(span.className);
     tableOl.appendChild(li);
