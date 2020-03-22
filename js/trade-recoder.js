@@ -96,17 +96,30 @@ function selectDB(event){
             let tableInput = document.getElementById("table-input");
             let dbNameInput = document.getElementById("easyIndexedDB-DB-name");
             let dbversion = document.getElementById("easyIndexedDB-version");
+            let tableOl = document.getElementById("easyIndexedDB-table-list");
             tableInput.value = "";
             dbNameInput.value = event.target.value;
             dbversion.innerHTML = arr[0]["version"]
                 while (tableList.firstChild) {
                 tableList.removeChild(tableList.firstChild);
                 }
+                while (tableOl.firstChild) {
+                tableOl.removeChild(tableOl.firstChild);
+                }
                 Object.keys(tableData).forEach(function (key) {
                     let option = document.createElement("option");
                     option.text = key;
                     option.value = key;
                     tableList.appendChild(option);
+                    let li = document.createElement("li");
+                    let input = document.createElement("input");
+                    li.appendChild(input);
+                    li.appendChild(input);
+                    let span = document.createElement("span");
+                    let i = document.createElement("i");
+                    span.appendChild(i);
+                    li.appendChild(span);
+                    tableList.appendChild(li);
                 })  
             }
         });
