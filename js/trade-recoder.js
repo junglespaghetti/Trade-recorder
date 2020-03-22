@@ -63,7 +63,7 @@ alert(htmlContents);
             tableInput.addEventListener('change',function (event){selectTable(event)});
             tableInput.addEventListener('click',function (event){tableInput.value=""});
             let dbOrigin = document.getElementById("easyIndexedDB-origin-url");
-            dbOrigin.value = location.hostname;
+            dbOrigin.innerHTML = location.hostname;
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
                     item.style.cursor = 'pointer';
                     item.style.marginRight = '4px';
