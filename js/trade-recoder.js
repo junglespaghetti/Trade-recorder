@@ -119,7 +119,7 @@ function selectDB(event){
                     let i = document.createElement("i");
                     span.appendChild(i);
                     li.appendChild(span);
-                    tableList.appendChild(li);
+                    tableOl.appendChild(li);
                 })  
             }
         });
