@@ -97,6 +97,7 @@ function addTableListLi(tableName,field){
     let span = document.createElement("span");
     span.innerHTML = '<i class="fas fa-times"></i>';
     span.class = 'easyIndexedDB-tablelist-delete';
+    span.style = "margin-left: 8px"
     span.addEventListener('click',function (event){
         let remove = event.target.parentNode.parentNode;
         remove.parentNode.removeChild(remove);
