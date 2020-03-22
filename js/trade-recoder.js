@@ -62,10 +62,7 @@ function startMain(){
             tableInput.addEventListener('click',function (event){tableInput.value=""});
             let addTableList = document.getElementById("easyIndexedDB-add-button");
             addTableList.addEventListener('click',function (event){
-                let tableOl = document.getElementById("easyIndexedDB-table-list");
-                let li = document.createElement("li");
-                li.innerHTML = tavleAndFieldLi;
-                tableOl.appendChild(li);
+                addTableListLi();
             });
             addTableListLi();
             let dbOrigin = document.getElementById("easyIndexedDB-origin-url");
@@ -99,7 +96,6 @@ function addTableListLi(tableLiName,field){
         let remove = event.target.parentNode.parentNode;
         remove.parentNode.removeChild(remove);
     });
-    let tableOl = document.getElementById("easyIndexedDB-table-list");
     let li = document.createElement("li");
     let tableInput = tableLiName ? 'value="' + tableLiName + '" ' : "" ;
     let fieldInput = field ? 'value="' + field + '" ' : "" ;
@@ -120,6 +116,7 @@ function selectDB(event){
             let tableInput = document.getElementById("table-input");
             let dbNameInput = document.getElementById("easyIndexedDB-DB-name");
             let dbversion = document.getElementById("easyIndexedDB-version");
+            let tableOl = document.getElementById("easyIndexedDB-table-list");
             tableInput.value = "";
             dbNameInput.value = event.target.value;
             dbversion.innerHTML = arr[0]["version"]
