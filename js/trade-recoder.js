@@ -7,7 +7,7 @@ function startMain(){
             <p>DB Name : <input id="easyIndexedDB-DB-name" style="margin:1px;pedding:1px;"></p>\
             <p>Version : <span id="easyIndexedDB-version"></span></p>\
             <p>Origin url : <span id="easyIndexedDB-origin-url"></span></p>\
-            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
+            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: field(Comma separated)</p>\
             <ol id="easyIndexedDB-table-list" style="padding-left: 20px;margin-top: 8px;">\
                 <li>\
                     <input style="width:80px;"> : <input><span style="margin-left: 8px"><i class="fas fa-times"></i></span>\
@@ -20,7 +20,7 @@ function startMain(){
 '
 alert(htmlContents);
     var easyIndexedDB = jsPanel.create({
-        headerTitle: 'Easy IbdexedDB',
+        headerTitle: 'Easy IndexedDB',
         position:    'center-top 0 80',
         contentSize: '450 250',
         content:htmlContents,
@@ -112,7 +112,7 @@ function selectDB(event){
                     option.value = key;
                     tableList.appendChild(option);
                     let li = document.createElement("li");
-                    li.innerHTML = '<input id="easyIndexedDB-table-name-li" style="width:80px;" value="'+key+'"> : <input id="easyIndexedDV-column-li" value="'+ tableData[key] +'"><span id="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
+                    li.innerHTML = '<input id="easyIndexedDB-table-name-li" style="width:80px;" value="'+key+'"> : <input id="easyIndexedDV-field-li" value="'+ tableData[key] +'"><span id="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
                     tableOl.appendChild(li);
                 })  
             }
