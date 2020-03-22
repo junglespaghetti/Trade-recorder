@@ -1,5 +1,5 @@
 function startMain(){
-    var htmlContents = '<div id="easyIndexedDB-contents" style="margin:2px;pedding:2px;font-size: small;">\
+    var htmlContents = '<div id="easyIndexedDB-contents" style="margin:4px;pedding:4px;font-size: small;">\
     <style>#easyIndexedDB-contents p{ margin:5px;}</style>\
     <ul id="easyIndexedDB-pages" style="list-style:">\
         <li id="easyIndexedDb-edit-form">\
@@ -20,8 +20,8 @@ function startMain(){
 '
 alert(htmlContents);
     var easyIndexedDB = jsPanel.create({
-        headerTitle: 'host:' + location.hostname,
-        position:    'center-top 0 58',
+        headerTitle: 'Easy IbdexedDB',
+        position:    'center-top 0 80',
         contentSize: '450 250',
         content:htmlContents,
         headerLogo:'<input type="text" id="db-input" list="db-list" placeholder="input DB name" autocomplete="off" style="margin-left:8px;font-size:10pt;"><datalist id="db-list"></datalist>',
