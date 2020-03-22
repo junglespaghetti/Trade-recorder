@@ -8,7 +8,7 @@ function startMain(){
             <p>Version : </p>\
             <p>Origin url : </p>\
             <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
-            <ol id="easyIndexedDB-table-list" style="padding-left: 10px;margin-top: 8px;">\
+            <ol id="easyIndexedDB-table-list" style="padding-left: 20px;margin-top: 8px;">\
                 <li>\
                     <input style="width:80px;"> : <input><span style="margin-left: 8px"><i class="fas fa-times"></i></span>\
                 </li>\
