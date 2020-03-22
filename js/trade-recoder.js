@@ -70,6 +70,10 @@ function startMain(){
                 li.innerHTML = tavleAndFieldLi;
                 tableOl.appendChild(li);
             });
+            let addTableList = document.getElementByClass("easyIndexedDB-tablelist-delete");
+            addTableList.addEventListener('click',function (event){
+                alert(event.target.parent.tagNeme);
+            });
             let dbOrigin = document.getElementById("easyIndexedDB-origin-url");
             dbOrigin.innerHTML = location.hostname;
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
