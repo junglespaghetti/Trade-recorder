@@ -62,7 +62,8 @@ alert(htmlContents);
             let tableInput = document.getElementById("table-input");
             tableInput.addEventListener('change',function (event){selectTable(event)});
             tableInput.addEventListener('click',function (event){tableInput.value=""});
-            document.getElementById("easyIndexedDB-origin-url").value = location.host;
+            let dbOrigin = document.getElementById("easyIndexedDB-origin-url");
+            dbOrigin.value = location.host;
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
                     item.style.cursor = 'pointer';
                     item.style.marginRight = '4px';
@@ -92,8 +93,10 @@ function selectDB(event){
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
             let tableData = JSON.parse(arr[0]["table"]);
-            document.getElementById("table-input").value = "";
-            document.getElementById("easyIndexedDB-version").value = event.target.value;
+            let tableInput = document.getElementById("table-input");
+            let dbversion = document.getElementById("easyIndexedDB-version");
+            tableInput.value = "";
+            dbVersion.value = event.target.value;
                 while (tableList.firstChild) {
                 tableList.removeChild(tableList.firstChild);
                 }
