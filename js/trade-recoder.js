@@ -106,7 +106,7 @@ function addTableListLi(tableName,field){
     let li = document.createElement("li");
     let tableInput = tableName ? 'value="' + tableName + '" ' : "" ;
     let fieldInput = field ? 'value="' + field + '" ' : "" ;
-    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px;" '+ tableName + 'placeholder="Table Name" /> : <input class="easyIndexedDV-field-li" ' + fieldInput + 'placeholder="Comma separated field">';
+    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px;" placeholder="Table Name" '+ tableName + '> : <input class="easyIndexedDV-field-li" ' + fieldInput + 'placeholder="Comma separated field">';
     li.appendChild(span);
     tableOl.appendChild(li);
 }
