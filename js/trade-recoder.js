@@ -97,10 +97,12 @@ function addTableListLi(){
     let span = document.createElement("span");
     span.innerHTML = '<i class="fas fa-times"></i>';
     span.class = 'easyIndexedDB-tablelist-delete';
+    span.addEventListener('click',function (event){alert("span")});
     let tableOl = document.getElementById("easyIndexedDB-table-list");
     let li = document.createElement("li");
     li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px; placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"></span>';
     alert(span.innerHTML);
+    li.appendChild(span);
     tableOl.appendChild(li);
 }
 
