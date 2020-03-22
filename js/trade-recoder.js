@@ -98,7 +98,8 @@ function addTableListLi(){
     span.innerHTML = '<i class="fas fa-times"></i>';
     span.class = 'easyIndexedDB-tablelist-delete';
     span.addEventListener('click',function (event){
-        removeElem.parentNode.removeChild(event.getSource().getElement());
+        let remove = event.getSource().getElement();
+        remove.parentNode.removeChild(remove);
         let parent = event.target.parent;
     });
     let tableOl = document.getElementById("easyIndexedDB-table-list");
