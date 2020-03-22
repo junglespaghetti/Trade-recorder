@@ -7,11 +7,8 @@ function startMain(){
             <p>DB Name : <input id="easyIndexedDB-DB-name" style="margin:1px;pedding:1px;"></p>\
             <p>Version : <span id="easyIndexedDB-version"></span></p>\
             <p>Origin url : <span id="easyIndexedDB-origin-url"></span></p>\
-            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: field (Comma separated)</p>\
+            <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name : field (Comma separated)</p>\
             <ol id="easyIndexedDB-table-list" style="padding-left: 20px;margin-top: 8px;">\
-                <li>\
-                    <input class="easyIndexedDB-table-name-li" style="width:80px;" placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>\
-                </li>\
             </ol>\
             <p style="margin-top: 8px"><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
         </li>\
@@ -70,7 +67,7 @@ function startMain(){
                 li.innerHTML = tavleAndFieldLi;
                 tableOl.appendChild(li);
             });
-            addTableListLi("test","hoge");
+            addTableListLi();
             let dbOrigin = document.getElementById("easyIndexedDB-origin-url");
             dbOrigin.innerHTML = location.hostname;
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
@@ -123,7 +120,6 @@ function selectDB(event){
             let tableInput = document.getElementById("table-input");
             let dbNameInput = document.getElementById("easyIndexedDB-DB-name");
             let dbversion = document.getElementById("easyIndexedDB-version");
-            let tableOl = document.getElementById("easyIndexedDB-table-list");
             tableInput.value = "";
             dbNameInput.value = event.target.value;
             dbversion.innerHTML = arr[0]["version"]
@@ -138,9 +134,7 @@ function selectDB(event){
                     option.text = key;
                     option.value = key;
                     tableList.appendChild(option);
-                    let li = document.createElement("li");
-                    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px;" value="'+key+'" placeholder="Table Name"> : <input class="easyIndexedDV-field-li" value="'+ tableData[key] +'" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
-                    tableOl.appendChild(li);
+                    addTableListLi(key,tableData[key])
                 })  
             }
         });
