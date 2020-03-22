@@ -96,6 +96,7 @@ function addTableListLi(tableLiName,field){
         let remove = event.target.parentNode.parentNode;
         remove.parentNode.removeChild(remove);
     });
+    let tableOl = document.getElementById("easyIndexedDB-table-list");
     let li = document.createElement("li");
     let tableInput = tableLiName ? 'value="' + tableLiName + '" ' : "" ;
     let fieldInput = field ? 'value="' + field + '" ' : "" ;
