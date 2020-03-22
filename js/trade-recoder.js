@@ -10,7 +10,7 @@ function startMain(){
             <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: field (Comma separated)</p>\
             <ol id="easyIndexedDB-table-list" style="padding-left: 20px;margin-top: 8px;">\
                 <li>\
-                    <input style="width:80px;"> : <input><span style="margin-left: 8px"><i class="fas fa-times"></i></span>\
+                    <input class="easyIndexedDB-table-name-li" style="width:80px;" placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>'\
                 </li>\
             </ol>\
             <p style="margin-top: 8px"><button id="easyIndexedDB-apply-button" type="button">Apply</button></p>\
