@@ -70,10 +70,7 @@ function startMain(){
                 li.innerHTML = tavleAndFieldLi;
                 tableOl.appendChild(li);
             });
-            let tableListDelete = document.getElementByClass("easyIndexedDB-tablelist-delete");
-            tableListDelete.addEventListener('click',function (event){
-                alert(event.target.parent.tagNeme);
-            });
+            addTableListLi();
             let dbOrigin = document.getElementById("easyIndexedDB-origin-url");
             dbOrigin.innerHTML = location.hostname;
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
@@ -86,6 +83,7 @@ function startMain(){
         }
     })
 }
+
 function createEasyIndexedDB(){
     let eDB = new Dexie("easyIndexedDB");
     eDB.version(1).stores({
@@ -95,6 +93,14 @@ function createEasyIndexedDB(){
     return eDB
 }
 
+function addTableListLi(){
+    let tableOl = document.getElementById("easyIndexedDB-table-list");
+    let li = document.createElement("li");
+    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px;" value="'+key+'" placeholder="Table Name"> : <input class="easyIndexedDV-field-li" value="'+ tableData[key] +'" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
+    let span = innerHTML.getElementByClass("easyIndexedDB-tablelist-delete");
+    alert(span.className);
+    tableOl.appendChild(li);
+}
 
 function selectDB(event){
     if(event.target.value){
