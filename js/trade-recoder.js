@@ -94,9 +94,11 @@ function selectDB(event){
             let tableList = document.getElementById("table-list");
             let tableData = JSON.parse(arr[0]["table"]);
             let tableInput = document.getElementById("table-input");
+            let dbNameInput = document.getElementById("easyIndexedDB-DB-name");
             let dbversion = document.getElementById("easyIndexedDB-version");
             tableInput.value = "";
-            dbVersion.value = event.target.value;
+            dbNameInput.value = event.target.value;
+            dbversion.innerHTML = arr[0]["version"]
                 while (tableList.firstChild) {
                 tableList.removeChild(tableList.firstChild);
                 }
