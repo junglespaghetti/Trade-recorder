@@ -4,9 +4,9 @@ function startMain(){
     <ul id="easyIndexedDB-pages" style="list-style:">\
         <li id="easyIndexedDb-edit-form">\
             <h3>Easy IndexedDB</h3>\
-            <p>DB Name : <input id="easyindexedDB-DB-name" style="margin:1px;pedding:1px;"></p>\
-            <p>Version : </p>\
-            <p>Origin url : </p>\
+            <p>DB Name : <input id="easyIndexedDB-DB-name" style="margin:1px;pedding:1px;"></p>\
+            <p>Version : <span id="easyIndexedDB-version"></span></p>\
+            <p>Origin url : <span id="easyIndexedDB-origin-url"></span></p>\
             <p><button id="easyIndexedDB-add-button" type="button">Add Table</button> Table name: Columns(Comma separated)</p>\
             <ol id="easyIndexedDB-table-list" style="padding-left: 20px;margin-top: 8px;">\
                 <li>\
@@ -62,6 +62,7 @@ alert(htmlContents);
             let tableInput = document.getElementById("table-input");
             tableInput.addEventListener('change',function (event){selectTable(event)});
             tableInput.addEventListener('click',function (event){tableInput.value=""});
+            document.getElementById("easyIndexedDB-origin-url").value = location.host;
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
                     item.style.cursor = 'pointer';
                     item.style.marginRight = '4px';
@@ -90,12 +91,12 @@ function selectDB(event){
             alert("aaa");
             }else if(arr.length == 1){
             let tableList = document.getElementById("table-list");
-            let tableInput = document.getElementById("table-input");
             let tableData = JSON.parse(arr[0]["table"]);
+            document.getElementById("table-input").value = "";
+            document.getElementById("easyIndexedDB-version").value = event.target.value;
                 while (tableList.firstChild) {
                 tableList.removeChild(tableList.firstChild);
                 }
-                tableInput.value = "";
                 Object.keys(tableData).forEach(function (key) {
                     let option = document.createElement("option");
                     option.text = key;
