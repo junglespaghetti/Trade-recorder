@@ -18,7 +18,8 @@ function startMain(){
     </ul>\
 </div>\
 '
-alert(htmlContents);
+    var tavleAndFieldLi = '<input class="easyIndexedDB-table-name-li" style="width:80px;" placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>'
+
     var easyIndexedDB = jsPanel.create({
         headerTitle: 'Easy IndexedDB',
         position:    'center-top 0 80',
@@ -62,6 +63,13 @@ alert(htmlContents);
             let tableInput = document.getElementById("table-input");
             tableInput.addEventListener('change',function (event){selectTable(event)});
             tableInput.addEventListener('click',function (event){tableInput.value=""});
+            let addTableList = document.getElementById("easyIndexedDB-add-button");
+            addTableList.addEventListener('click',function (event){
+                let tableOl = document.getElementById("easyIndexedDB-table-list");
+                let li = document.createElement("li");
+                li.innerHTML = tavleAndFieldLi;
+                tableOl.appendChild(li);
+            });
             let dbOrigin = document.getElementById("easyIndexedDB-origin-url");
             dbOrigin.innerHTML = location.hostname;
                 this.headertoolbar.querySelectorAll('span').forEach(function(item) {
