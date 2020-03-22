@@ -112,7 +112,7 @@ function selectDB(event){
                     option.value = key;
                     tableList.appendChild(option);
                     let li = document.createElement("li");
-                    li.innerHTML = '<input id="easyIndexedDB-table-name-li" style="width:80px;" value="'+key+'"> : <input id="easyIndexedDV-column-li><span style="margin-left: 8px"><i class="fas fa-times"></i></span>';
+                    li.innerHTML = '<input id="easyIndexedDB-table-name-li" style="width:80px;" value="'+key+'"> : <input id="easyIndexedDV-column-li" value="'+ tableData[key] +'"><span style="margin-left: 16px"><i class="fas fa-times"></i></span>';
                     tableOl.appendChild(li);
                 })  
             }
