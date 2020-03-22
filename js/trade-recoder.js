@@ -94,10 +94,12 @@ function createEasyIndexedDB(){
 }
 
 function addTableListLi(){
+    let span = document.createElement("span");
+    span.innerHTML = '<i class="fas fa-times"></i>';
+    span.class = 'easyIndexedDB-tablelist-delete';
     let tableOl = document.getElementById("easyIndexedDB-table-list");
     let li = document.createElement("li");
-    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px; placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
-    let span = li.getElementByClass("easyIndexedDB-tablelist-delete");
+    li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px; placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"></span>';
     alert(span.innerHTML);
     tableOl.appendChild(li);
 }
