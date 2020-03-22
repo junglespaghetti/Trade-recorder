@@ -98,7 +98,7 @@ function addTableListLi(){
     let li = document.createElement("li");
     li.innerHTML = '<input class="easyIndexedDB-table-name-li" style="width:80px; placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>';
     let span = li.getElementByClass("easyIndexedDB-tablelist-delete");
-    alert(span.className);
+    alert(span.innerHTML);
     tableOl.appendChild(li);
 }
 
