@@ -1,4 +1,4 @@
-function startMain(){
+function startMain(EasyIndexedDBname){
     var htmlContents = '<div id="easyIndexedDB-contents" style="margin:4px;pedding:4px;font-size: small;">\
     <style>#easyIndexedDB-contents p{ margin:5px;}</style>\
     <ul id="easyIndexedDB-pages" style="list-style:">\
@@ -15,8 +15,6 @@ function startMain(){
     </ul>\
 </div>\
 '
-    var tavleAndFieldLi = '<input class="easyIndexedDB-table-name-li" style="width:80px;" placeholder="Table Name"> : <input class="easyIndexedDV-field-li" placeholder="Comma separated field"><span class="easyIndexedDB-tablelist-delete" style="margin-left: 8px"><i class="fas fa-times"></i></span>'
-
     var easyIndexedDB = jsPanel.create({
         headerTitle: 'Easy IndexedDB',
         position:    'center-top 0 80',
